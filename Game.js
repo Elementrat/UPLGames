@@ -42,7 +42,8 @@ module.exports = function (app, io) {
 			return {
 				title : q.title,
 				url : q.url,
-				value : q.value
+				value : q.value,
+				category: q.category,
 			}
 		})
 		res.send(out);

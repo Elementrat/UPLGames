@@ -68,4 +68,22 @@ app.controller("main", function ($scope, $http, socket) {
 		$scope.categories = parseQuestions(value)
 	})
 
+	$http.get("/api/timeleft").success(function(data) {
+		$scope.time = {
+			client : Date.now(),
+			serverRemaining : data.time
+		}
+	})
+
+	socket.on("timeleft", function (data) {
+		$scope.time = {
+			client : Date.now(),
+			serverRemaining : data.time
+		}
+	})
+
+	socket.on("questions", function (value) {
+		$scope.categories = parseQuestions(value)
+	})
+
 })

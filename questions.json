@@ -2,7 +2,7 @@
 {
 	"title" : "Graphics",
 	"category" : "Coded Messages",
-	"url" : "url/to/thingy",
+	"url" : "img/graphics.jpg",
 	"token"  : "bigdate",
 	"body" : "What did the software engineer call his romantic liason?",
 	"value" : 1
@@ -10,7 +10,7 @@
 {
 	"title" : "Linked In",
 	"category" : "Coded Messages",
-	"url" : "url/to/thingy",
+	"url" : "img/",
 	"token"  : "pointy",
 	"body" : "Linear time access they say",
 	"value" : 1
@@ -24,14 +24,21 @@
 	"value" : 1
 },
 {
+	"title" : "Go Go Gadget",
+	"category" : "Coded Messages",
+	"url" : "url/to/thingy",
+	"token"  : "cybersecurity1",
+	"body" : "",
+	"value" : 1
+},
+{
 	"title" : "The Human Computer",
 	"category" : "Coded Messages",
 	"url" : "url/to/thingy",
-	"token"  : "100",
-	"body" : "dead",
+	"token"  : "52",
+	"body" : "119 104 097 116 032 105 115 032 116 119 111 032 112 108 117 115 032 116 119 111 013 010",
 	"value" : 1
 },
-
 
 
 
@@ -39,7 +46,7 @@
 {
 	"title" : "Resume",
 	"category" : "Console Warriors",
-	"url" : "url/to/thingy",
+	"url" : "img/resume.jpg",
 	"token"  : "pcpjarsbambd",
 	"body" : "how many are on your resume?",
 	"value" : 1
@@ -47,7 +54,7 @@
 {
 	"title" : "Cult Of Personality",
 	"category" : "Console Warriors",
-	"url" : "url/to/thingy",
+	"url" : "img/cultofpersonality.jpg",
 	"token"  : "namedrop",
 	"body" : "they made it",
 	"value" : 1
@@ -60,19 +67,46 @@
 	"body" : "well hello",
 	"value" : 1
 },
-
-
 {
-	"title" : "Computer Signs",
-	"category" : "Startup Grind",
+	"title" : "Crossed Streams",
+	"category" : "Console Warriors",
 	"url" : "url/to/thingy",
-	"token"  : "eatstreet",
-	"body" : "Sample Text",
+	"token"  : "crossover",
+	"body" : "well hello",
 	"value" : 1
-
 },
-
-
+{
+	"title" : "Bring Your Cards",
+	"category" : "Console Warriors",
+	"url" : "url/to/thingy",
+	"token"  : "carts",
+	"body" : "well hello",
+	"value" : 1
+},
+{
+	"title" : "Control Freaks",
+	"category" : "Console Warriors",
+	"url" : "url/to/thingy",
+	"token"  : "carts",
+	"body" : "well hello",
+	"value" : 1
+},
+{
+	"title" : "Forgotten",
+	"category" : "Console Warriors",
+	"url" : "url/to/thingy",
+	"token"  : "carts",
+	"body" : "well hello",
+	"value" : 1
+},
+{
+	"title" : "Anthro",
+	"category" : "Console Warriors",
+	"url" : "url/to/thingy",
+	"token"  : "carts",
+	"body" : "well hello",
+	"value" : 1
+},
 
 {
 	"title" : "Stacks on Stacks",
@@ -106,7 +140,7 @@
 	"title" : "but what about us",
 	"category" : "Top 10",
 	"url" : "url/to/thingy",
-	"token"  : "eatstreet",
+	"token"  : "51",
 	"body" : "Sample Text",
 	"value" : 1
 }

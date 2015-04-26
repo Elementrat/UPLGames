@@ -24,7 +24,7 @@ module.exports = function (app, io) {
 	}
 	var self = this;
 
-	app.post("/answer/", function (req, res) {
+	app.post("/api/answer/", function (req, res) {
 		var body = req.body, 
 			team = body.team,
 			questionId = body.questionId,
@@ -43,6 +43,7 @@ module.exports = function (app, io) {
 				title : q.title,
 				url : q.url,
 				value : q.value,
+				body: q.body,
 				category: q.category,
 			}
 		})
@@ -93,8 +94,10 @@ module.exports = function (app, io) {
 module.exports.prototype.answer = function (team, questionId, token) {
 	if(this.teams[team] === undefined
 		|| this.questions[questionId] === undefined
-		|| token === undefined
-		|| this.teams[team].answers[questionId]) return "Error";
+		|| token === undefined) return "Error";
+
+
+	if(this.teams[team].answers[questionId]) return "Answered"
 
 	if(this.questions[questionId].token === token) {
 		this.teams[team].score+=this.questions[questionId].value;
@@ -102,9 +105,8 @@ module.exports.prototype.answer = function (team, questionId, token) {
 		this.save();
 		return "Correct"
 	}else{
-		return "False"
+		return "Incorrect"
 	}
-
 }
 
 

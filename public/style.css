@@ -28,7 +28,8 @@ ul{
 	background:#003200;
 	width:200px;
 	height:100%;
-	border: 1px solid 
+	border: 1px solid;
+	pointer-events:none;
 }
 
 input{
@@ -40,11 +41,16 @@ input{
 	color:#01bc01;
 }
 
+#answerfield{
+
+}
+
 #inputbox{
 	margin:0px auto;
 	width:450px;
 	color:#01bc01;
 	margin-top:15px;
+	display:none;
 }
 
 textarea:focus, input:focus{
@@ -67,18 +73,23 @@ textarea:focus, input:focus{
 #headline{
 	text-align:center;
 	line-height:30px;
-	width:76%;
-	float:left;
+	margin:0px auto;
+	width:30%;
 	height:30px;
 }
 
-#teamname{
+#teamdata{
+	position:absolute;
+	left:0px;
+	top:0px;
 	float:left;
-	width:150px;
+	width:250px;
 }
 
 #leaderboard{
-	float:right;
+	position:absolute;
+	right:0px;
+	top:0px;
 	width:150px;
 	text-align: right;
 }
@@ -86,7 +97,7 @@ textarea:focus, input:focus{
 
 #content{
 	min-width:850px;
-	min-height:600px;
+	height:600px;
 	border:1px solid #01bc01;
 	text-align: center;
 }
@@ -106,18 +117,44 @@ textarea:focus, input:focus{
 	font-weight:bold;
 	font-size:larger;
 }
-.question{
+
+a:hover{
+	color:#FFFFFF;
 	cursor:pointer;
 }
 
-.question:hover{
-	color:#FFFFFF;
-}
-
 #contentimage{
-	background-image:url('img/appstore.jpg');
 	width:900px;
 	height:500px;
 	margin:0px auto;
+}
+
+#login{
+	margin-top:30px;
+}
+
+#footer{
+	position:absolute;
+	right:0px;
+	top:700px;
+}
+
+
+@-webkit-keyframes resultFade {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+#result {
+	opacity:0;
 }
 

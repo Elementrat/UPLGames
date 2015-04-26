@@ -8,6 +8,9 @@
 	<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
 </head>
 <body ng-app="app" ng-controller="main">
+<!--Make sure no hackers see this. 
+The answer to Go Go Gadget is "cybersecurity1"
+!-->
 
 <div id="nav">
 <ul>
@@ -16,44 +19,55 @@
 
 		<ul>
 		<li ng-repeat="question in questions">
-			<div class = "question" ng-class="{'complete' : team.answers[$index]}">
-				{{question.title}}
+			<div class = "question" ng-click = "setCurrentQuestion(question)" ng-class="{'complete' : currentTeam.answers[question.index]==1}">
+				<a> {{question.title}} </a>
 			</div>
 		</li>
 	</ul>
 	</li>
-
 </ul>
-
 	
 
 </div>
 <div id = "frameContainer">
 <div id = "topnav">
-<div id = "teamname"> Team: TeamName </div>
+<div id = "teamdata"> Team: {{currentTeam.name}} | Score: {{currentTeam.score}}</div>
 <div id ="headline"> 
 <h3>1'st Annual UPL Games </h3>
 </div>
-<div id = "leaderboard"><a href ="leaderboard"> Leaderboard </a> </div>
+<div id = "leaderboard"><a href ="scoreboard.html" target = "_blank"> Scoreboard </a> </div>
 </div>
 
 
 <div id = "content">
 
-<div id ="title"> Cult of Personality
+<div id ="title"> {{currentQuestion.title}}
 </div>
-<div id = "contentimage">
 
+<div id = "login">
+	<h3>Please select your team </h3>
+	<ul>
+		<li ng-repeat = "team in teams"> <a ng-click = "setCurrentTeam(team)"> {{team.name}} </a></li>
+	</ul>
 </div>
+
+<div id = "contentimage" ng-style="{'background-image' :'url('+currentQuestion.url+')'}">
+</div>
+
+
 <div id = "bodytext">
 {{currentQuestion.body}}
 </div>
 
 </div>
 <div id = "inputbox"> 
-Answer: <input type = "text">
+Answer: <input id = "answerfield" type = "text"  ng-model = "answerfield" ng-enter="submitAnswer(answerfield)">
+<div id = "result"> {{resultCode}} </div>
+
+
 </div>
 
+<a id = "footer" href = "https://www.youtube.com/watch?v=1XUeiYieYK4" target="_blank"> tunnel snakes rule ( ͡° ͜ʖ ͡°) </a>
 </div>
 
 

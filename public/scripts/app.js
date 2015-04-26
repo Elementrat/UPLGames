@@ -1,20 +1,4 @@
-var app = angular.module("app", []);
-/*
-http://stackoverflow.com/questions/15417125/submit-form-on-pressing-enter-with-angularjs
-*/
-angular.module('app').directive('ngEnter', function() {
-        return function(scope, element, attrs) {
-            element.bind("keydown keypress", function(event) {
-                if(event.which === 13) {
-                    scope.$apply(function(){
-                        scope.$eval(attrs.ngEnter, {'event': event});
-                    });
-
-                    event.preventDefault();
-                }
-            });
-        };
-    });
+var app = angular.module("app", ["socket", "ngenter"]);
 
 
 var parseQuestions = function(questions) {
@@ -26,22 +10,7 @@ var parseQuestions = function(questions) {
 	})
 	return out;
 }
-app.factory("socket", function ($rootScope) {
-	var socket = io.connect();
-	return {
-		on : function(name, callback) {
-			socket.on(name, function () {
-				var args = arguments;
-				$rootScope.$apply(function(){
-					callback.apply(socket, args)
-				})
-			})
-		}, 
-		emit : function (name, data) {
-			socket.emit(name, data);
-		}
-	}
-})
+
 app.controller("main", function ($scope, $http, socket) {
 	$scope.currentQuestion = { body: ''}
 	$scope.resultCode = '';

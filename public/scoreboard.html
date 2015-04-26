@@ -1,9 +1,9 @@
 <html>
 <head>
 	<script src="/socket.io/socket.io.js"></script>
-	<script src="angular.min.js"></script>
-	<script src="scoreboard.js"></script>
-	<link href="scoreboard.css" rel="stylesheet" type="text/css" />
+	<script src="scripts/angular.min.js"></script>
+	<script src="scripts/scoreboard.js"></script>
+	<link href="style/scoreboard.css" rel="stylesheet" type="text/css" />
 </head>
 <body ng-app="scoreboard" ng-controller="main">
 	<div ng-repeat="team in teams track by $index" class="team">

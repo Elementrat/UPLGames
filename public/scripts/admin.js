@@ -29,7 +29,7 @@ app.controller("main", function ($scope, $http, $rootScope) {
 app.directive("teamedit", function ($http, $rootScope) {
 	return {
 		restrict : "A",
-		templateUrl : "teamedit.html",
+		templateUrl : "templates/teamedit.html",
 		scope : {
 			team : "=teamedit"
 		},//ADD PROMT

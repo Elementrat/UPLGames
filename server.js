@@ -11,9 +11,6 @@ var express = require("express"),
 	http.listen(8080);
 
 	var game = new Game(app, io);
-		game.addTeam("Red");
-		game.addTeam("Blue");
-		//console.log(game.answer("Red", 2, "brazil"));
 
 /*
 

@@ -62,6 +62,30 @@ module.exports = function (app, io) {
 		}
 		res.send("1337Haxer");
 	})
+
+	app.post("/admin/remove_team", function (req, res) {
+		var body = req.body,
+			team = body.team,
+			password = body.password;
+
+		if(password === PASWORD){
+			if(self.teams[team] !== undefined){
+				delete self.teams[team];
+				self.save();
+			}
+		}
+		res.send("1337Haxer");
+	})
+
+	app.post("/admin/add_team", function (req, res) {
+		var body = req.body,
+			team = body.team,
+			password = body.password;
+		if(password === PASWORD){
+			self.addTeam(team);
+		}
+		res.send("1337Haxer");
+	})
 }
 
 //Error, Incorrect, Correct

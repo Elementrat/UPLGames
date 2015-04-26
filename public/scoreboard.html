@@ -1,0 +1,17 @@
+<html>
+<head>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="angular.min.js"></script>
+	<script src="scoreboard.js"></script>
+	<link href="scoreboard.css" rel="stylesheet" type="text/css" />
+</head>
+<body ng-app="scoreboard" ng-controller="main">
+	<div ng-repeat="team in teams track by $index" class="team">
+		<div class="bar" ng-style="{'height' :  team.score / maxScore * maxHeight + minHeight}">
+			<div class="score">{{team.score}}</div>
+			
+		</div>
+		<div class="teamname">{{team.name}}</div>
+	</div>
+</body>
+</html>

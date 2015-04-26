@@ -5,18 +5,54 @@
 	<script src="app.js"></script>
 
 	<link href="style.css" type="text/css" rel="stylesheet"/>
+	<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
 </head>
 <body ng-app="app" ng-controller="main">
 
 <div id="nav">
-	<ul>
+<ul>
+	<li class = "categorybox" ng-repeat="(category, questions) in categories">
+		<div class = "category"> {{category}}</div>
+
+		<ul>
 		<li ng-repeat="question in questions">
-			<div ng-class="{'complete' : team.answers[$index]}">
+			<div class = "question" ng-class="{'complete' : team.answers[$index]}">
 				{{question.title}}
 			</div>
-		
 		</li>
 	</ul>
+	</li>
+
+</ul>
+
+	
+
+</div>
+<div id = "frameContainer">
+<div id = "topnav">
+<div id = "teamname"> Team: TeamName </div>
+<div id ="headline"> 
+<h3>1'st Annual UPL Games </h3>
+</div>
+<div id = "leaderboard"><a href ="leaderboard"> Leaderboard </a> </div>
+</div>
+
+
+<div id = "content">
+
+<div id ="title"> Cult of Personality
+</div>
+<div id = "contentimage">
+
+</div>
+<div id = "bodytext">
+{{currentQuestion.body}}
+</div>
+
+</div>
+<div id = "inputbox"> 
+Answer: <input type = "text">
+</div>
 
 </div>
 

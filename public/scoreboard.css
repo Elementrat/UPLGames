@@ -1,0 +1,29 @@
+
+
+.team {
+	display: inline-block;
+	width: 100px;
+	text-align: center;
+}
+
+.team .teamname {
+	width: 150px;
+	position: absolute;
+	bottom: 10px;
+}
+
+.bar {
+	margin: 0px auto;
+	position: absolute;
+	width: 80px;
+	background-color:green;
+	bottom: 30px;
+	 -webkit-transition:height 2s;
+	 transition:height 2s;
+
+}
+
+.score {
+	position: relative;
+	top:-20px;
+}

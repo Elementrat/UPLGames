@@ -7,13 +7,17 @@ var PASWORD = "hunter2"
 module.exports = function (app, io) {
 	this.app = app;
 	this.io = io;
+	this.startTime = null;
+	this.timeToRun = 9000000;
 
 	//determine if the cache file
 	this.questions = JSON.parse(fs.readFileSync( "./questions.json", 'utf8'));
 
 	this.teams = {};
 	try {
-		var save = JSON.parse(fs.readFileSync( "./cache_file.json", 'utf8'));
+		var obj = JSON.parse(fs.readFileSync( "./cache_file.json", 'utf8'));
+		var save = obj.teams;
+		this.startTime = obj.startTime;
 		for(var name in save){
 			var team = save[name];
 			this.teams[name] = team;
@@ -25,11 +29,14 @@ module.exports = function (app, io) {
 	var self = this;
 
 	app.post("/api/answer/", function (req, res) {
+		
+
 		var body = req.body, 
 			team = body.team,
 			questionId = body.questionId,
 			token = body.token
 		var status = self.answer(team, questionId, token);
+		console.log(status)
 		res.send(status);
 	});
 
@@ -38,16 +45,54 @@ module.exports = function (app, io) {
 	})
 
 	app.get("/api/questions", function(req, res) {
-		var out = self.questions.map(function(q){
-			return {
-				title : q.title,
-				url : q.url,
-				value : q.value,
-				body: q.body,
-				category: q.category,
-			}
-		})
+		var out;
+		if(self.startTime !== null){
+			out = self.questions.map(function(q){
+				return {
+					title : q.title,
+					url : q.url,
+					value : q.value,
+					body: q.body,
+					category: q.category,
+				}
+			})
+		}else{
+			out = [];
+		}
+		
 		res.send(out);
+	})
+
+	app.get("/api/timeleft", function(req, res) {
+		if(self.startTime == null){
+			res.send({time : -9999999999});
+		}else{
+			res.send({ time : self.timeToRun - (Date.now() - self.startTime)});
+		}
+		
+	})
+
+	app.post("/admin/start", function (req, res) {
+		var body = req.body,
+			password = body.password;
+
+		if(password === PASWORD){
+			self.startTime = Date.now();
+			var out = self.questions.map(function(q){
+				return {
+					title : q.title,
+					url : q.url,
+					value : q.value,
+					body: q.body,
+					category: q.category,
+				}
+			})
+			io.sockets.emit("timeleft", self.timeToRun - (Date.now() - self.startTime))
+			io.sockets.emit("questions", out)
+			console.log("GAME HAS STARTED!!!!!");
+			self.save();
+		}
+		res.send("1337Haxer");
 	})
 
 	app.post("/admin/add_points", function (req, res) {
@@ -111,7 +156,10 @@ module.exports.prototype.answer = function (team, questionId, token) {
 
 
 module.exports.prototype.save = function () {
-	fs.writeFileSync("./cache_file.json", JSON.stringify(this.teams));
+	fs.writeFileSync("./cache_file.json", JSON.stringify({
+		startTime : this.startTime,
+		teams : this.teams
+	}));
 	this.io.sockets.emit("save", this.teams);
 }
 

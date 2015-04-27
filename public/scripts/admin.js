@@ -4,6 +4,13 @@ var app = angular.module("admin", [])
 	
 app.controller("main", function ($scope, $http, $rootScope) {
 
+	$rootScope.start = function () {
+		$http.post("/admin/start", {
+			password : $rootScope.password
+		})
+	}
+
+
 	$rootScope.updatePassword = function (password) {
 		$rootScope.password = password;
 	}

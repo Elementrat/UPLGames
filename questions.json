@@ -12,7 +12,7 @@
 	"category" : "Coded Messages",
 	"url" : "img/lineartime.jpg",
 	"token"  : "pointy",
-	"body" : "Linear time access they say",
+	"body" : "HEAD U+2173 1 U+25B2 -2 U+25B2",
 	"value" : 1
 },
 {
@@ -29,6 +29,14 @@
 	"url" : "url/to/thingy",
 	"token"  : "cybersecurity1",
 	"body" : "",
+	"value" : 1
+},
+{
+	"title" : "JAWS",
+	"category" : "Coded Messages",
+	"url" : "url/to/thingy",
+	"token"  : "steveirwin",
+	"body" : "They're attracted to blood...",
 	"value" : 1
 },
 {
@@ -171,6 +179,16 @@
 	"url" : "url/forefathers.jpg",
 	"token"  : "51",
 	"body" : "botmans",
+	"value" : 1
+},
+
+
+{
+	"title" : "HALP",
+	"category" : "Trivial Pursuits",
+	"url" : "url/to/thingy",
+	"token"  : "defaced",
+	"body" : "Those hackers are a wiley bunch",
 	"value" : 1
 }
 ]

@@ -35,6 +35,7 @@ app.controller("main", function ($scope, $http, socket) {
 		$scope.currentQuestion = question
 		document.getElementById("inputbox").style.display = "block"
 		document.getElementById("answerfield").value= "";
+		document.getElementById("bodytext").innerHTML = $scope.currentQuestion.body;
 	}
 
 	$scope.setCurrentTeam = function(team){

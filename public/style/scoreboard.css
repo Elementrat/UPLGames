@@ -1,4 +1,20 @@
+body{
+	background-color:#000000;
+	color:white;
+}
 
+.gridcontainer{
+	width:90%;
+	min-width:700px;
+	height:90%;
+	border: 1px solid #00FF00;
+	margin:0px auto;
+}
+
+#grid{
+	margin:0px auto;
+	height:200px;
+}
 
 .team {
 	display: inline-block;
@@ -7,20 +23,22 @@
 }
 
 .team .teamname {
-	width: 150px;
+	width: 80px;
 	position: absolute;
-	bottom: 10px;
+	text-align: center;
+	bottom: 50px;
 }
 
 .bar {
-	margin: 0px auto;
 	position: absolute;
+	bottom:150px;
 	width: 80px;
+	margin-bottom:50px;
+	bottom:0px;
 	background-color:green;
 	bottom: 30px;
 	 -webkit-transition:height 2s;
 	 transition:height 2s;
-
 }
 
 .score {

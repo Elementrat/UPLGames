@@ -29,11 +29,14 @@ module.exports = function (app, io) {
 	var self = this;
 
 	app.post("/api/answer/", function (req, res) {
+		
+
 		var body = req.body, 
 			team = body.team,
 			questionId = body.questionId,
 			token = body.token
 		var status = self.answer(team, questionId, token);
+		console.log(status)
 		res.send(status);
 	});
 

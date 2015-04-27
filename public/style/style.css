@@ -90,7 +90,7 @@ textarea:focus, input:focus{
 	position:absolute;
 	right:0px;
 	top:0px;
-	width:150px;
+	width:250px;
 	text-align: right;
 }
 
@@ -107,11 +107,9 @@ textarea:focus, input:focus{
 	line-height:40px;
 }
 
-.categorybox::after{
-	margin-bottom:25px;
-	height:25px;
-	padding-bottom:25px;
+.categorybox{
 	content: none;
+	margin-bottom:15px;
 }
 .category{
 	font-weight:bold;

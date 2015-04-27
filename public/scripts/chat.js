@@ -2,7 +2,7 @@ var app = angular.module("chat", ["socket", "ngenter"]);
 
 
 
-app.controller("main", function ($scope, socket) {
+app.controller("main", function ($scope, socket, $timeout) {
 	window.onbeforeonload = function () {
 		socket.disconnect();
 	}
@@ -18,8 +18,10 @@ app.controller("main", function ($scope, socket) {
 
 	$scope.addMessage = function (message) {
 		$scope.messages.push(message);
-		var d = $('#chatpanel');
-		d.scrollTop(d.prop("scrollHeight"));
+		$timeout(function(){
+			var d = $('#chatpanel');
+			d.scrollTop(d.prop("scrollHeight"));
+		})
 	}
 
 	$scope.send = function () {
@@ -37,8 +39,6 @@ app.controller("main", function ($scope, socket) {
 			}
 
 		}
-		var d = $('#chatpanel');
-		d.scrollTop(d.prop("scrollHeight"));
 	}
 
 	socket.on("connect", function () {

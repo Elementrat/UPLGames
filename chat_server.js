@@ -12,7 +12,7 @@ var express = require("express"),
 	http.listen(4200);
 
 
-	var users = { Server : true};
+	var users = { Mainframe : true};
 	io.sockets.on('connection', function(socket) {
 
 		socket.on("set_user", function(data) {

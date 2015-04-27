@@ -6,17 +6,39 @@
 	<script src="scripts/modules/socket.js"></script>
 	<script src="scripts/modules/ngEnter.js"></script>
 	<script src="scripts/chat.js"></script>
+	<link href="style/chat.css" type="text/css" rel="stylesheet"/>
+	<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<div id = "rootcontainer">
 <div class="chatapp" ng-app="chat" ng-controller="main">
+<div id = "namepanel"> <h2> Users </h2>
+<div id = "userlist"> 
+<div ng-repeat = "(user,name) in users" ng-class = "{'mainframecontent':user=='Mainframe'}">
+{{user}}
+
+
+</div>
+
+
+</div>
+</div>
+
+
+
+
+<div id = "chatpanel">
 	<div class="messages">
-		<div ng-repeat="message in messages track by $index	">
-			{{message.username}} : {{message.message}}
+		<div ng-repeat="message in messages track by $index" ng-class = "{'mainframecontent':message.username=='Mainframe'}">
+			{{message.username}}: {{message.message}}
 		</div>
 	</div>
-	<div class="inputarea">
+	
+	</div>
+	<div id="inputarea">
 		<input id="input" ng-enter="send()"/>
 	</div>
+</div>
 </div>
 </body>
 </html>

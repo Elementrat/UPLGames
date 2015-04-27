@@ -12,7 +12,7 @@ app.controller("main", function ($scope, socket) {
 	$scope.waitingOnServer = false;
 
 	var EnterUserNameMessage = {
-		username : "Server",
+		username : "Mainframe",
 		message : "Please Enter A Username..."
 	}
 
@@ -30,10 +30,13 @@ app.controller("main", function ($scope, socket) {
 			if(text.length < 14){
 				socket.emit("set_user", {username:text});
 				$("#input").val("");
+			}else{
+				$scope.addMessage({username : "Mainframe", message : "Username Too Long"})
 			}
 
 		}
-		
+		var d = $('#chatpanel');
+		d.scrollTop(d.prop("scrollHeight"));
 	}
 
 	socket.on("connect", function () {
@@ -44,9 +47,9 @@ app.controller("main", function ($scope, socket) {
 		if(data.status == true){
 			$scope.username = data.username;
 			$scope.hasUsername = true;
-			$scope.addMessage({username : "Server", message : "Welcome " + data.username});
+			$scope.addMessage({username : "Mainframe", message : "Welcome " + data.username});
 		}else{
-			$scope.addMessage({username : "Server", message : "Username Unavailable"});
+			$scope.addMessage({username : "Mainframe", message : "Username Unavailable"});
 			$scope.addMessage(EnterUserNameMessage);
 		}
 		$scope.waitingOnServer = false;
@@ -62,7 +65,7 @@ app.controller("main", function ($scope, socket) {
 
 	socket.on("notify_answer", function (data) {
 		$scope.addMessage({
-			username : "Server",
+			username : "Mainframe",
 			message : "team " + data.team + " has answered " + data.title
 		})
 	})

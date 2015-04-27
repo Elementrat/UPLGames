@@ -1,0 +1,65 @@
+body{
+	background-color:black;
+	color:#01bc01;
+	font-family: 'Press Start 2P';
+	font-size:12px;
+
+}
+
+#input{
+	width:600px;
+	background-color:transparent;
+	border: 1px solid #01bc01;
+	color:white;
+	margin:0px auto;
+}
+
+#rootcontainer{
+	width:900px;
+	height:700px;
+	border: 1px solid #01bc01;
+	margin:0px auto;
+	padding:5px 5px 5px 5px;
+}
+
+#namepanel{
+	float:left;
+	width:200px;
+	height:100%;
+	margin:5px 5px 5px 5px;
+	padding:5px 5px;
+}
+
+#chatpanel{
+	margin-top:10px;
+	float:left;
+	width:75%;
+	height:600px;
+	overflow-y:scroll;
+}
+::-webkit-scrollbar
+{
+  width: 12px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#userlist{
+}
+
+#inputarea{
+	bottom:0px;
+}
+
+.mainframecontent{
+	color:yellow;
+}

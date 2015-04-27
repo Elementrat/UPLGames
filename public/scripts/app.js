@@ -25,15 +25,25 @@ app.controller("main", function ($scope, $http, socket) {
 			token : text,
 			questionId: $scope.currentQuestion.index,
 		}).success(function(data){
+			console.log('success with' + data)
 			$scope.resultCode = data;
-			document.getElementById("result").style.webkitAnimation = ""
-			document.getElementById("result").style.webkitAnimation = "resultFade 2s"
+			console.log(data=="success")
+
+			if(data !="Correct"){
+				$("#result").css("color", "red")
+			}
+			else{
+				$("#result").css("color", "green")
+			}
+
+			$('#result').animate({opacity:1},400).animate({opacity:0},3000);
+
 		})
 	}
 
 	$scope.setCurrentQuestion = function(question){
 		$scope.currentQuestion = question
-		document.getElementById("inputbox").style.display = "block"
+		$("#inputbox").css("display", "block")
 		document.getElementById("answerfield").value= "";
 		document.getElementById("bodytext").innerHTML = $scope.currentQuestion.body;
 	}

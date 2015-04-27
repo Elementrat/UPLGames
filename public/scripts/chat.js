@@ -25,10 +25,15 @@ app.controller("main", function ($scope, socket) {
 		if(text === undefined || text == "") return;
 		if($scope.hasUsername){
 			socket.emit("message", text);
+			$("#input").val("");
 		}else if(!$scope.waitingOnServer){
-			socket.emit("set_user", {username:text});
+			if(text.length < 14){
+				socket.emit("set_user", {username:text});
+				$("#input").val("");
+			}
+
 		}
-		$("#input").val("");
+		
 	}
 
 	socket.on("connect", function () {

@@ -1,5 +1,5 @@
 var fs = require("fs");
-var PASWORD = "hunter2"
+var PASSWORD = "hunter2"
 /*
 
 
@@ -76,7 +76,7 @@ module.exports = function (app, io) {
 		var body = req.body,
 			password = body.password;
 
-		if(password === PASWORD){
+		if(password === PASSWORD){
 			self.startTime = Date.now();
 			var out = self.questions.map(function(q){
 				return {
@@ -101,7 +101,7 @@ module.exports = function (app, io) {
 			points = body.points,
 			password = body.password;
 
-		if(password === PASWORD){
+		if(password === PASSWORD){
 			if(self.teams[team] !== undefined){
 				self.teams[team].score += points;
 				self.save();
@@ -115,7 +115,7 @@ module.exports = function (app, io) {
 			team = body.team,
 			password = body.password;
 
-		if(password === PASWORD){
+		if(password === PASSWORD){
 			if(self.teams[team] !== undefined){
 				delete self.teams[team];
 				self.save();
@@ -128,7 +128,7 @@ module.exports = function (app, io) {
 		var body = req.body,
 			team = body.team,
 			password = body.password;
-		if(password === PASWORD){
+		if(password === PASSWORD){
 			self.addTeam(team);
 		}
 		res.send("1337Haxer");

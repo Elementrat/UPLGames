@@ -29,7 +29,7 @@
 
 <div id = "chatpanel">
 	<div class="messages">
-		<div ng-repeat="message in messages track by $index" ng-class = "{'mainframecontent':message.username=='Mainframe'}">
+		<div ng-repeat="message in messages track by $index" ng-class = "{'mainframecontent':message.username=='Mainframe', 'bluetext' : message.message.charAt(0) == '>'}">
 			{{message.username}}: {{message.message}}
 		</div>
 	</div>

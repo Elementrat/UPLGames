@@ -6,6 +6,10 @@ body{
 
 }
 
+
+.bluetext {
+	color : blue;
+}
 #input{
 	width:600px;
 	background-color:transparent;

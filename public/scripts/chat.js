@@ -18,6 +18,8 @@ app.controller("main", function ($scope, socket) {
 
 	$scope.addMessage = function (message) {
 		$scope.messages.push(message);
+		var d = $('#chatpanel');
+		d.scrollTop(d.prop("scrollHeight"));
 	}
 
 	$scope.send = function () {

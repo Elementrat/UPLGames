@@ -9,6 +9,10 @@
 
 	<link href="style/style.css" type="text/css" rel="stylesheet"/>
 	<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="scripts/lib/css/jquery.countdown.css"> 
+	<script type="text/javascript" src="scripts/lib/jquery.plugin.js"></script>
+	<script type="text/javascript" src="scripts/lib/jquery.countdown.js"></script>
+
 </head>
 <body ng-app="app" ng-controller="main">
 <!--Make sure no hackers see this. 
@@ -37,7 +41,8 @@ The answer to Go Go Gadget is "cybersecurity1"
 <div id = "teamdata"> Team: {{currentTeam.name}} | Score: {{currentTeam.score}}</div>
 <div id ="headline"> 
 <h3>1st Annual UPL Games </h3>
-Time Remaining
+
+
 </div>
 <div id = "leaderboard"> 
 <a href = "chat.html" target = "_blank"> chat</a> | <a href ="scoreboard.html" target = "_blank"> scoreboard </a> </div>
@@ -72,7 +77,7 @@ Answer: <input id = "answerfield" type = "text"  ng-model = "answerfield" ng-ent
 
 
 </div>
-
+<div id = "countdown"> Remaining</div>
 <a id = "footer" href = "https://www.youtube.com/watch?v=1XUeiYieYK4" target="_blank"> tunnel snakes rule ( ͡° ͜ʖ ͡°) </a>
 </div>
 

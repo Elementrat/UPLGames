@@ -37,6 +37,7 @@ The answer to Go Go Gadget is "cybersecurity1"
 <div id = "teamdata"> Team: {{currentTeam.name}} | Score: {{currentTeam.score}}</div>
 <div id ="headline"> 
 <h3>1st Annual UPL Games </h3>
+Time Remaining
 </div>
 <div id = "leaderboard"> 
 <a href = "chat.html" target = "_blank"> chat</a> | <a href ="scoreboard.html" target = "_blank"> scoreboard </a> </div>
@@ -52,6 +53,7 @@ The answer to Go Go Gadget is "cybersecurity1"
 	<h3>Select Team </h3>
 	<ul>
 		<li ng-repeat = "team in teams"> <a ng-click = "setCurrentTeam(team)"> {{team.name}} </a></li>
+		<!--<li> <input type = "text" value = "new team"> </li>!-->
 	</ul>
 </div>
 

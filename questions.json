@@ -10,7 +10,7 @@
 {
 	"title" : "Linked In",
 	"category" : "Coded Messages",
-	"url" : "img/",
+	"url" : "img/lineartime.jpg",
 	"token"  : "pointy",
 	"body" : "Linear time access they say",
 	"value" : 1
@@ -40,15 +40,12 @@
 	"value" : 1
 },
 
-
-
-
 {
 	"title" : "Resume",
 	"category" : "Console Warriors",
 	"url" : "img/resume.jpg",
 	"token"  : "pcpjarsbambd",
-	"body" : "how many are on your resume?",
+	"body" : "1st letter of each",
 	"value" : 1
 },
 {
@@ -62,7 +59,7 @@
 {
 	"title" : "App $tore",
 	"category" : "Console Warriors",
-	"url" : "url/to/thingy",
+	"url" : "img/AppStore.jpg",
 	"token"  : "touchscreen",
 	"body" : "well hello",
 	"value" : 1
@@ -77,6 +74,14 @@
 },
 {
 	"title" : "Bring Your Cards",
+	"category" : "Console Warriors",
+	"url" : "url/to/thingy",
+	"token"  : "carts",
+	"body" : "well hello",
+	"value" : 1
+},
+{
+	"title" : "Crossy Brick Road",
 	"category" : "Console Warriors",
 	"url" : "url/to/thingy",
 	"token"  : "carts",
@@ -100,7 +105,7 @@
 	"value" : 1
 },
 {
-	"title" : "Anthro",
+	"title" : "Anthropic Principle",
 	"category" : "Console Warriors",
 	"url" : "url/to/thingy",
 	"token"  : "carts",
@@ -117,6 +122,24 @@
 	"value" : 1
 },
 {
+	"title" : "Social Engineers",
+	"category" : "Hiring Rockstars",
+	"url" : "url/to/thingy",
+	"token"  : "kevinmitnick",
+	"body" : "Ask and ye shall receive",
+	"value" : 1
+},
+{
+	"title" : "Apply now",
+	"category" : "Hiring Rockstars",
+	"url" : "url/to/thingy",
+	"token"  : "microsoft",
+	"body" : "what two words don't apply?",
+	"value" : 1
+},
+
+
+{
 	"title" : "But does it scale",
 	"category" : "Hiring Rockstars",
 	"url" : "url/to/thingy",
@@ -127,21 +150,27 @@
 {
 	"title" : "X-Play",
 	"category" : "Hiring Rockstars",
-	"url" : "url/to/thingy",
-	"token"  : "eatstreet",
-	"body" : "Sample Text",
+	"url" : "img/xplay.jpg",
+	"token"  : "intern",
+	"body" : "",
 	"value" : 1
 },
 
 
-
-
 {
-	"title" : "but what about us",
-	"category" : "Top 10",
-	"url" : "url/to/thingy",
+	"title" : "Flyovers",
+	"category" : "Forefathers",
+	"url" : "img/flyovers.jpg",
 	"token"  : "51",
-	"body" : "Sample Text",
+	"body" : "what about us",
+	"value" : 1
+},
+{
+	"title" : "Gig Hero",
+	"category" : "Forefathers",
+	"url" : "url/forefathers.jpg",
+	"token"  : "51",
+	"body" : "botmans",
 	"value" : 1
 }
 ]

@@ -18,6 +18,7 @@ app.controller("main", function ($scope, $http, socket) {
 		name : 'signedout',
 		score: 0,
 	}
+	$.countdown.setDefaults({description: ' to MayDay', compact: false});
 
 	$scope.submitAnswer = function(text){
 		$http.post("/api/answer/", {
@@ -78,16 +79,19 @@ app.controller("main", function ($scope, $http, socket) {
 	})
 
 	$http.get("/api/timeleft").success(function(data) {
-		$scope.time = {
-			client : Date.now(),
-			serverRemaining : data.time
-		}
+
+			//update in post request to get time
+	//also in case where server said no
+	//number returned / 1000
+	if(data.time>0){
+
+		$("#countdown").countdown({until: data.time/1000})
+	}
 	})
 
 	socket.on("timeleft", function (data) {
-		$scope.time = {
-			client : Date.now(),
-			serverRemaining : data.time
+		if(data.time>0){
+			$("#countdown").countdown({until: data.time/1000})
 		}
 	})
 

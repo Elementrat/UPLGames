@@ -1,13 +1,18 @@
 var express = require("express"),
 	app = express(),
 	http = require("http").Server(app),
-	io = require("socket.io")(http)
+	io = require("socket.io")(http),
+	gamesocket = require('socket.io-client')('http://localhost:8080');
+
+	gamesocket.on('notify_answer', function (data) {
+		io.sockets.emit("notify_answer", data);
+	})
 	
 	app.use(express.static(__dirname + "/public"));
 	http.listen(4200);
 
 
-	var users = {};
+	var users = { Server : true};
 	io.sockets.on('connection', function(socket) {
 
 		socket.on("set_user", function(data) {
@@ -23,7 +28,7 @@ var express = require("express"),
 
 		socket.on("message", function (data) {
 			if(socket.username === undefined) return;
-			io.sockets.emit("message", socket.username + " : " + data);
+			io.sockets.emit("message", {username : socket.username, message : data});
 		})
 
 		socket.on("disconnect", function (e) {

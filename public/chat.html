@@ -11,11 +11,11 @@
 <div class="chatapp" ng-app="chat" ng-controller="main">
 	<div class="messages">
 		<div ng-repeat="message in messages track by $index	">
-			{{message}}
+			{{message.username}} : {{message.message}}
 		</div>
 	</div>
 	<div class="inputarea">
-		<input id="input" ng-model="text" ng-enter="send(text)"/>
+		<input id="input" ng-enter="send()"/>
 	</div>
 </div>
 </body>

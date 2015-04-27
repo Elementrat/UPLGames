@@ -1,20 +1,30 @@
 var app = angular.module("chat", ["socket", "ngenter"]);
 
+
+
 app.controller("main", function ($scope, socket) {
+	window.onbeforeonload = function () {
+		socket.disconnect();
+	}
 	$scope.messages = [];
 	$scope.username;
 	$scope.hasUsername = false;
 	$scope.waitingOnServer = false;
 
+	var EnterUserNameMessage = {
+		username : "Server",
+		message : "Please Enter A Username..."
+	}
+
 	$scope.addMessage = function (message) {
 		$scope.messages.push(message);
 	}
 
-	$scope.send = function (text) {
+	$scope.send = function () {
+		var text = $("#input").val();
 		if(text === undefined || text == "") return;
 		if($scope.hasUsername){
 			socket.emit("message", text);
-			console.log("SENDING")
 		}else if(!$scope.waitingOnServer){
 			socket.emit("set_user", {username:text});
 		}
@@ -22,17 +32,17 @@ app.controller("main", function ($scope, socket) {
 	}
 
 	socket.on("connect", function () {
-		$scope.addMessage("Please Enter A Username...")
+		$scope.addMessage(EnterUserNameMessage)
 	})
 
 	socket.on('set_user', function (data) {
 		if(data.status == true){
 			$scope.username = data.username;
 			$scope.hasUsername = true;
-			$scope.addMessage("Hello " + data.username);
+			$scope.addMessage({username : "Server", message : "Welcome " + data.username});
 		}else{
-			$scope.addMessage("Username Unavailable");
-			$scope.addMessage("Please Enter A Username...");
+			$scope.addMessage({username : "Server", message : "Username Unavailable"});
+			$scope.addMessage(EnterUserNameMessage);
 		}
 		$scope.waitingOnServer = false;
 	})
@@ -43,6 +53,13 @@ app.controller("main", function ($scope, socket) {
 
 	socket.on('updatelist', function (data) {
 		$scope.users = data;
+	})
+
+	socket.on("notify_answer", function (data) {
+		$scope.addMessage({
+			username : "Server",
+			message : "team " + data.team + " has answered " + data.title
+		})
 	})
 })
 

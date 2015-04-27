@@ -29,14 +29,11 @@ module.exports = function (app, io) {
 	var self = this;
 
 	app.post("/api/answer/", function (req, res) {
-		
-
 		var body = req.body, 
 			team = body.team,
 			questionId = body.questionId,
 			token = body.token
 		var status = self.answer(team, questionId, token);
-		console.log(status)
 		res.send(status);
 	});
 
@@ -148,6 +145,7 @@ module.exports.prototype.answer = function (team, questionId, token) {
 		this.teams[team].score+=this.questions[questionId].value;
 		this.teams[team].answers[questionId] = 1;
 		this.save();
+		this.io.sockets.emit("notify_answer", {team : team, title : this.questions[questionId].title})
 		return "Correct"
 	}else{
 		return "Incorrect"

@@ -17,6 +17,12 @@ app.controller("main", function ($scope, socket, $timeout) {
 	}
 
 	$scope.addMessage = function (message) {
+
+		if(message.message.trim().charAt(0) == ">"){
+			message.bluetext = true;
+		}
+
+
 		$scope.messages.push(message);
 		$timeout(function(){
 			var d = $('#chatpanel');

@@ -16,7 +16,8 @@ var express = require("express"),
 	io.sockets.on('connection', function(socket) {
 
 		socket.on("set_user", function(data) {
-			if(users[data.username] === undefined){
+			if(data.username === undefined) return;
+			if(users[data.username] === undefined && data.username.length < 14){
 				socket.username = data.username;
 				socket.emit("set_user", { status : true, username : data.username });
 				users[data.username] = true;

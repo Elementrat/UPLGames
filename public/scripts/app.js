@@ -20,7 +20,6 @@ app.controller("main", function ($scope, $http, socket) {
 	}
 
 	$scope.submitAnswer = function(text){
-		console.log(text)
 		$http.post("/api/answer/", {
 			team: $scope.currentTeam.name,
 			token : text,
@@ -55,7 +54,6 @@ app.controller("main", function ($scope, $http, socket) {
 				$scope.teams[teamName].answers = data[teamName].answers;
 			}
 		}
-		$scope.teams = data;
 	})
 
 	//for now assume team red until there is a lobby system. 

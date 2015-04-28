@@ -106,7 +106,7 @@ app.controller("main", function ($scope, $http, socket) {
 
 	$http.get("/api/timeleft").success(function(data) {
 
-			//update in post request to get time
+	//update in post request to get time
 	//also in case where server said no
 	//number returned / 1000
 		$scope.serverTime = data.time;

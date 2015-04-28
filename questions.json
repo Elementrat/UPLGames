@@ -48,7 +48,14 @@
 	"body" : "",
 	"value" : 1
 },
-
+{
+	"title" : "Chex the Oven",
+	"category" : "Coded Messages",
+	"url" : false,
+	"token"  : "g",
+	"body" : "1011 1010 X 1011 1010 X 1011 1011 1011 1011 1010 1010 1010 1010 1011 1010 X <br> What's been X'd out? Look at your notes.",
+	"value" : 1
+},
 
 
 

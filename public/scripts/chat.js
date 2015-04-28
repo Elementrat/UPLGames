@@ -22,6 +22,10 @@ app.controller("main", function ($scope, socket, $timeout) {
 			message.bluetext = true;
 		}
 
+		if(message.message.charAt(0) == "@"){
+			message.orangetext = true;
+		}
+
 
 		$scope.messages.push(message);
 		$timeout(function(){
@@ -33,18 +37,27 @@ app.controller("main", function ($scope, socket, $timeout) {
 	$scope.send = function () {
 		var text = $("#input").val();
 		if(text === undefined || text == "") return;
-		if($scope.hasUsername){
-			socket.emit("message", text);
-			$("#input").val("");
-		}else if(!$scope.waitingOnServer){
-			if(text.length < 14){
-				socket.emit("set_user", {username:text});
-				$("#input").val("");
-			}else{
-				$scope.addMessage({username : "Mainframe", message : "Username Too Long"})
-			}
 
+		if(text.charAt(0) === "/"){
+			if(text.indexOf("/set_admin") > -1 ){
+				socket.emit("set_admin", { password : text.split(" ")[1]});
+			}
+			$("#input").val("");
+		}else{
+			if($scope.hasUsername){
+				socket.emit("message", text);
+				$("#input").val("");
+			}else if(!$scope.waitingOnServer){
+				if(text.length < 14){
+					socket.emit("set_user", {username:text});
+					$("#input").val("");
+				}else{
+					$scope.addMessage({username : "Mainframe", message : "Username Too Long"})
+				}
+
+			}
 		}
+		
 	}
 
 	socket.on("connect", function () {

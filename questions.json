@@ -18,7 +18,7 @@
 {
 	"title" : "Eggs",
 	"category" : "Coded Messages",
-	"url" : "url/to/thingy",
+	"url" : false,
 	"token"  : "defaced",
 	"body" : "Those hackers are a wiley bunch",
 	"value" : 1
@@ -26,7 +26,7 @@
 {
 	"title" : "Go Go Gadget",
 	"category" : "Coded Messages",
-	"url" : "url/to/thingy",
+	"url" : false,
 	"token"  : "cybersecurity1",
 	"body" : "",
 	"value" : 1
@@ -34,7 +34,7 @@
 {
 	"title" : "JAWS",
 	"category" : "Coded Messages",
-	"url" : "url/to/thingy",
+	"url" : false,
 	"token"  : "steveirwin",
 	"body" : "They're attracted to blood...",
 	"value" : 1
@@ -42,7 +42,7 @@
 {
 	"title" : "The Human Computer",
 	"category" : "Coded Messages",
-	"url" : "url/to/thingy",
+	"url" : false,
 	"token"  : "52",
 	"body" : "119 104 097 116 032 105 115 032 116 119 111 032 112 108 117 115 032 116 119 111 013 010",
 	"value" : 1
@@ -92,7 +92,7 @@
 	"title" : "Crossy Brick Road",
 	"category" : "Console Warriors",
 	"url" : "url/to/thingy",
-	"token"  : "carts",
+	"token"  : "kersplat",
 	"body" : "well hello",
 	"value" : 1
 },
@@ -138,11 +138,19 @@
 	"value" : 1
 },
 {
-	"title" : "Apply now",
+	"title" : "Party People",
+	"category" : "Hiring Rockstars",
+	"url" : false,
+	"token"  : "microsoft",
+	"body" : "what two words don't apply? <a href = 'https://www.youtube.com/watch?v=Zww2ivWdLas' target = '_blank'>( ͡~ ͜ʖ ͡°)</a>",
+	"value" : 1
+},
+{
+	"title" : "Slick Logo",
 	"category" : "Hiring Rockstars",
 	"url" : "url/to/thingy",
-	"token"  : "microsoft",
-	"body" : "what two words don't apply?",
+	"token"  : "shipit",
+	"body" : "",
 	"value" : 1
 },
 
@@ -174,14 +182,13 @@
 	"value" : 1
 },
 {
-	"title" : "Gig Hero",
+	"title" : "Athletes Foo",
 	"category" : "Forefathers",
-	"url" : "url/forefathers.jpg",
-	"token"  : "51",
-	"body" : "botmans",
+	"url" : false,
+	"token"  : "totals",
+	"body" : "He invented the most famous programming language, but was more proud of his backhand. (14) <br> She dunked so hard she discovered bugs in her teeth. (12) <br> The web was his hole-in-one. (15) <br> He and Ballmer dominated in the courts and on the court. (9) <br> Passed. Relied heavily on his team to get the job done. (10) <br> A wilde beest on the bball court, his stature was a huge advantage.(15)",
 	"value" : 1
 },
-
 
 {
 	"title" : "HALP1",

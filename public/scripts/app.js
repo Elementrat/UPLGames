@@ -41,6 +41,7 @@ app.controller("main", function ($scope, $http, socket) {
 			team: $scope.currentTeam.name,
 			token : text,
 			questionId: $scope.currentQuestion.index,
+			phrase : $scope.currentTeam.phrase
 		}).success(function(data){
 			console.log('success with' + data)
 			$scope.resultCode = data;
@@ -62,7 +63,7 @@ app.controller("main", function ($scope, $http, socket) {
 		$scope.currentQuestion = question
 		$("#inputbox").css("display", "block")
 		document.getElementById("answerfield").value= "";
-		document.getElementById("bodytext").innerHTML = $scope.currentQuestion.body;
+		$("#bodytext").html($scope.currentQuestion.body);
 	}
 
 
@@ -71,13 +72,21 @@ app.controller("main", function ($scope, $http, socket) {
 		$("#countdown").countdown({until: $scope.serverTime/1000})
 	}
 
-	$scope.setCurrentTeam = function(team){
-		$scope.currentTeam = team;
-		document.getElementById("nav").style.pointerEvents = "all"
-		document.getElementById("login").style.display = "none"
-		//$scope.setCurrentQuestion($scope.questions[0]);
-		$scope.currentQuestion.title = "Welcome, " + $scope.currentTeam.name +"!";
-		$scope.currentQuestion.title += ""
+	$scope.setCurrentTeam = function(phrase){
+		$http.post("/api/get_team", {phrase : phrase}).success(function(response) {
+			if(response.valid){
+				$scope.currentTeam = $scope.teams[response.team];
+				$scope.currentTeam.phrase = phrase;
+				document.getElementById("nav").style.pointerEvents = "all"
+				document.getElementById("login").style.display = "none"
+				//$scope.setCurrentQuestion($scope.questions[0]);
+				$scope.currentQuestion.title = "Welcome, " + $scope.currentTeam.name +"!";
+				$("#bodytext").html("Tips for Puzzling Success <br> 1. Remember the category. <br> 2. Consider the title. It *could* be a hint. <br> 3. Think about how information could be encoded. <br> Good luck. You are our only hopes.");
+			}else{
+				//@ALEX PLZ SIGNAL FAULURE	
+			}
+		})
+		
 	}
 
 	socket.on("save", function (data) {
@@ -99,7 +108,6 @@ app.controller("main", function ($scope, $http, socket) {
 	//for now assume team red until there is a lobby system. 
 	$http.get("/api/state").success(function(value) {
 		$scope.teams = value;
-		$scope.team = value["Red"];
 	})
 
 	$http.get("/api/questions").success(function(value) {

@@ -33,9 +33,10 @@ module.exports = function (app, io) {
 	app.post("/api/answer/", function (req, res) {
 		var body = req.body, 
 			team = body.team,
+			phrase = body.phrase,
 			questionId = body.questionId,
 			token = body.token
-		var status = self.answer(team, questionId, token);
+		var status = self.answer(team, phrase, questionId, token);
 		res.send(status);
 	});
 
@@ -71,7 +72,7 @@ module.exports = function (app, io) {
 		
 	})
 
-	app.post("api/get_team", function (req, res) {
+	app.post("/api/get_team", function (req, res) {
 		var body = req.body,
 			phrase = body.phrase;
 
@@ -155,11 +156,13 @@ module.exports = function (app, io) {
 }
 
 //Error, Incorrect, Correct
-module.exports.prototype.answer = function (team, questionId, token) {
+module.exports.prototype.answer = function (team, phrase, questionId, token) {
 	if(this.teams[team] === undefined
 		|| this.questions[questionId] === undefined
 		|| token == null 
-		|| token === undefined) return "Error";
+		|| token === undefined
+		|| phrase === undefined 
+		|| this.teams[team].phrase !== phrase) return "Error";
 
 
 	if(this.teams[team].answers[questionId]) return "Answered"

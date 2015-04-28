@@ -55,11 +55,12 @@ The answer to Go Go Gadget is "cybersecurity1"
 </div>
 
 <div id = "login">
-	<h3>Select Team </h3>
+	<h3>Active Teams</h3>
 	<ul>
-		<li ng-repeat = "team in teams"> <a ng-click = "setCurrentTeam(team)"> {{team.name}} </a></li>
+		<li ng-repeat = "team in teams"> {{team.name}}</li>
 		<!--<li> <input type = "text" value = "new team"> </li>!-->
 	</ul>
+	<input id = "teamphraseinput" ng-model="teamphrase" ng-enter="setCurrentTeam(teamphrase)" placeholder="Enter your team's passphrase"> 
 </div>
 
 <div id = "contentimage" ng-show = "currentQuestion.url" ng-style="{'background-image' :'url('+currentQuestion.url+')'}">

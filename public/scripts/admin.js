@@ -15,10 +15,11 @@ app.controller("main", function ($scope, $http, $rootScope) {
 		$rootScope.password = password;
 	}
 
-	$rootScope.addTeam = function (teamName) {
+	$rootScope.addTeam = function (teamName, phrase) {
 		$http.post("/admin/add_team", {
 			password : $rootScope.password,
-			team : teamName
+			team : teamName,
+			phrase : phrase
 		})
 	}
 

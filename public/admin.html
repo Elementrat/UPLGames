@@ -21,7 +21,7 @@
 		<input ng-model="spook" type="password" ng-change="updatePassword(spook)"/>
 		<button ng-click="start()">Start</button>
 	</div>
-	<input ng-model="teamName"/> <button ng-click="addTeam(teamName)">Add Team</button>
+	<input ng-model="teamName"/><input ng-model="phrase"/> <button ng-click="addTeam(teamName, phrase)">Add Team</button>
 	<h1>Teams</h1>
 	<ul>
 		<li ng-repeat="team in teams">

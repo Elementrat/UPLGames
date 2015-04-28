@@ -1,6 +1,6 @@
 var fs = require("fs");
 var PASSWORD = "hunter2"
-var PHRASE = "ALL YOUR PASS PHRASES ARE BELONG TO US"
+var ENDGAME = "ALL YOUR PASS PHRASES ARE BELONG TO US"
 
 /*
 
@@ -41,7 +41,7 @@ module.exports = function (app, io) {
 	});
 
 	app.get("/api/state", function(req, res) {
-		res.send(self.teams);
+		res.send(self.getSafeTeams());
 	})
 
 	app.get("/api/questions", function(req, res) {
@@ -88,6 +88,34 @@ module.exports = function (app, io) {
 				res.send({valid : false});
 			}
 	});
+
+	app.post("/api/meta", function (req, res) {
+		var body = req.body,
+			team = body.team,
+			phrase = body.phrase;
+
+		if(phrase === undefined
+			|| team === undefined
+			|| self.teams[team] === undefined
+			|| self.teams[team].phrase !== phrase){
+			res.send("gtfo")
+			return;
+		}
+
+		var out = [];
+		var answers = self.teams[team].answers;
+
+		for(var i = 0; i < ENDGAME.length;i++){
+			var c  = ENDGAME.charAt(i);
+			if(answers[i]){
+				out[i] = c;
+			}else{
+				out[i] = "?"
+			}
+		}
+
+		res.send(out);
+	})
 
 	app.post("/admin/start", function (req, res) {
 		var body = req.body,
@@ -184,7 +212,20 @@ module.exports.prototype.save = function () {
 		startTime : this.startTime,
 		teams : this.teams
 	}));
-	this.io.sockets.emit("save", this.teams);
+	this.io.sockets.emit("save", this.getSafeTeams());
+}
+
+module.exports.prototype.getSafeTeams = function () {
+	var out = {};
+	for(var teamName in this.teams){
+		var team = this.teams[teamName];
+		out[teamName] = {
+			name : team.name,
+			score : team.score,
+			answers : team.answers
+		}
+	}
+	return out;
 }
 
 module.exports.prototype.isTeamAvaiable = function (name) {

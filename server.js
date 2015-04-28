@@ -12,6 +12,13 @@ var express = require("express"),
 
 	var game = new Game(app, io);
 
+
+var express2 = require("express")
+var app2 = express();
+app2.use(express.static(__dirname + "/public/ettwo"));
+var http2 = require("http").Server(app2)
+http2.listen(1337)
+
 /*
 
 

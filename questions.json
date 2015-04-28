@@ -41,6 +41,25 @@
 },
 
 {
+	"title" : "Remorse",
+	"category" : "Coded Messages",
+	"url" : "img/remorse.jpg",
+	"token"  : "ivebeencoaxed",
+	"body" : "",
+	"value" : 1
+},
+{
+	"title" : "Chex the Oven",
+	"category" : "Coded Messages",
+	"url" : false,
+	"token"  : "g",
+	"body" : "1011 1010 X 1011 1010 X 1011 1011 1011 1011 1010 1010 1010 1010 1011 1010 X <br> What's been X'd out? Look at your notes.",
+	"value" : 1
+},
+
+
+
+{
 	"title" : "Resume",
 	"category" : "Console Warriors",
 	"url" : "img/resume.jpg",
@@ -48,6 +67,8 @@
 	"body" : "1st letter of each",
 	"value" : 1
 },
+
+
 {
 	"title" : "Cult Of Personality",
 	"category" : "Console Warriors",
@@ -61,7 +82,7 @@
 	"category" : "Console Warriors",
 	"url" : "img/AppStore.jpg",
 	"token"  : "touchscreen",
-	"body" : "well hello",
+	"body" : "",
 	"value" : 1
 },
 {
@@ -105,6 +126,14 @@
 	"value" : 1
 },
 {
+	"title" : "Playing with Powers",
+	"category" : "Console Warriors",
+	"url" : "img/playingwithpowers.jpg",
+	"token"  : "16",
+	"body" : "Which power of 2 never had a buddy?",
+	"value" : 1
+},
+{
 	"title" : "Anthropic Principle",
 	"category" : "Console Warriors",
 	"url" : "url/to/thingy",
@@ -129,23 +158,14 @@
 	"value" : 1
 },
 {
-	"title" : "Slick Logo",
+	"title" : "Slick Pixels",
 	"category" : "Hiring Rockstars",
 	"url" : false,
 	"token"  : "shipit",
-	"body" : "Branded in 4096 pixels",
+	"body" : "Branded in 16x16",
 	"value" : 1
 },
 
-
-{
-	"title" : "But does it scale",
-	"category" : "Hiring Rockstars",
-	"url" : "url/to/thingy",
-	"token"  : "eatstreet",
-	"body" : "Sample Text",
-	"value" : 1
-},
 {
 	"title" : "X-Play",
 	"category" : "Hiring Rockstars",
@@ -174,41 +194,41 @@
 },
 
 {
-	"title" : "HALP1",
+	"title" : "Stallmanism",
 	"category" : "Trivial Pursuits",
-	"url" : "url/to/thingy",
-	"token"  : "defaced",
-	"body" : "Those hackers are a wiley bunch",
+	"url" : false,
+	"token"  : "printer",
+	"body" : "The Free Software movement was created by <a href = 'https://www.youtube.com/watch?v=9sJUDx7iEJw' target='_blank'> Richard Stallman</a> after he was unable to hack a ______ because it had proprietary software.",
 	"value" : 1
 },
 {
-	"title" : "HALP2",
+	"title" : "Feel Old Yet?",
 	"category" : "Trivial Pursuits",
-	"url" : "url/to/thingy",
+	"url" : false,
 	"token"  : "defaced",
-	"body" : "Those hackers are a wiley bunch",
+	"body" : "69 years ago, the first electronic turing complete computer was finished, are you brainiac enough to know its name?",
 	"value" : 1
 },
 {
-	"title" : "HALP3",
+	"title" : "Not as in free beer!",
 	"category" : "Trivial Pursuits",
-	"url" : "url/to/thingy",
-	"token"  : "defaced",
-	"body" : "Those hackers are a wiley bunch",
+	"url" : false,
+	"token"  : "micro",
+	"body" : "The GNU project was started to provide a Free Libre Open Source operating system at a time when all operating systems were proprietary. GNU itself is a recursive name for “GNU’s not Unix!”, the GNU project aims to have a _ _ _ _ kernel, believed to be more efficient, but far more difficult to program.",
 	"value" : 1
 },
 {
-	"title" : "HALP4",
+	"title" : "Oh #$%@!",
 	"category" : "Trivial Pursuits",
-	"url" : "url/to/thingy",
-	"token"  : "defaced",
-	"body" : "Those hackers are a wiley bunch",
+	"url" : false,
+	"token"  : "rm -rf /",
+	"body" : "On a Unix or Unix-like machine, with root permissions this 6 character terminal command spells out your data’s death, Rest in RIP.",
 	"value" : 1
 },
 {
 	"title" : "HALP5",
 	"category" : "Trivial Pursuits",
-	"url" : "url/to/thingy",
+	"url" : false,
 	"token"  : "defaced",
 	"body" : "Those hackers are a wiley bunch",
 	"value" : 1

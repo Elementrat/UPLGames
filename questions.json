@@ -232,5 +232,29 @@
 	"token"  : "defaced",
 	"body" : "Those hackers are a wiley bunch",
 	"value" : 1
+},
+{
+	"title" : "Inquisition",
+	"category" : "Applications",
+	"url" : false,
+	"token"  : "521694201",
+	"body" : "<span class='applications1'>Follow these steps to acquire access to the User DB<ol> <li> SSH into a UPL machine (ssh enderman.upl.cs.wisc.edu)</li> <li> Copy the User DB to wherever you would like ('cp ~riccardo/Public/uplgames.db .' to copy it into your current directory)</li><li> Access the <a href='http://www.tutorialspoint.com/sqlite/'>SQLite</a> databse by typing: 'sqlite3 uplgames.db', and make queries in the interactive menu. </li></ol></span><br/>What is the SSN of the 2nd highest paid CEO? (Digits only please, no hyphens!)",
+	"value" : 1
+},
+{
+	"title" : "Snoopin' Around",
+	"category" : "Applications",
+	"url" : false,
+	"token"  : "adventures in stochastic processes",
+	"body" : "<span class='applications1'>You've snooped on Alan and Alice Turing's network for a few hours, trying to figure out what topic they're trying to learn... here's how you set up your tools:<ol> <li> SSH into a UPL machine (ssh enderman.upl.cs.wisc.edu)</li> <li> Download the PCAP dump of the network activity here: https://www.dropbox.com/s/qxcfz8ojrj0hg2q/trace1.pcap</li><li> Access the dump using Wireshark or a similar tool. We've installed Wireshark on enderman.upl.cs.wisc.edu for you. </li></ol></span><br/>What <i>textbook</i> was Alice searching for?",
+	"value" : 1
+},
+{
+	"title" : "Transmission Error!",
+	"category" : "Applications",
+	"url" : false,
+	"token"  : "ayy_lmao",
+	"body" : "You knew the answer to the puzzle and backed it up earlier today at: <a href='https://www.dropbox.com/s/rbitcfbrcjxqokg/transmissionerror.gif'>this gif</a>, but the internet seemed to cut out for <i>the first few milliseconds</i> of the upload. If only there was some way you could still see what it was...",
+	"value" : 1
 }
 ]

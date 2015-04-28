@@ -18,7 +18,7 @@ app.controller("main", function ($scope, $http, socket) {
 		name : 'signedout',
 		score: 0,
 	}
-	$.countdown.setDefaults({description: ' to MayDay', compact: false});
+	$.countdown.setDefaults({description: ' until detonation', compact: true});
 
 	$scope.submitAnswer = function(text){
 		$http.post("/api/answer/", {

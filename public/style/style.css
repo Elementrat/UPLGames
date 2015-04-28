@@ -22,14 +22,21 @@ ul{
 	padding:0px 0px 0px 0px;
 }
 
+#navbottom{
+	width:200px;
+	height:100px;
+}
+
+
 #nav{
 	float:left;
 	padding:15px 15px;
 	background:#003200;
-	width:200px;
+	width:210px;
 	height:100%;
 	border: 1px solid;
 	pointer-events:none;
+	overflow-y:scroll;
 }
 
 input{
@@ -148,4 +155,20 @@ a:hover{
 
 .applications1{
 	text-align: left;
+}
+
+::-webkit-scrollbar
+{
+  width: 12px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: rgba(255, 255, 255,  0.5);
 }

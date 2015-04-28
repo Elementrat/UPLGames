@@ -33,6 +33,7 @@ app.controller("main", function ($scope, $http, socket) {
 		score: 0,
 	}
 	$scope.gameActive = false;
+	$scope.serverTime = 0;
 	$.countdown.setDefaults({description: ' until detonation', compact: true});
 
 	$scope.submitAnswer = function(text){
@@ -67,7 +68,7 @@ app.controller("main", function ($scope, $http, socket) {
 
 	$scope.startGame= function(){
 		$scope.gameActive = true;
-		$("#countdown").countdown({until: data.time/1000})
+		$("#countdown").countdown({until: $scope.serverTime/1000})
 	}
 	$scope.setCurrentTeam = function(team){
 		$scope.currentTeam = team;
@@ -108,12 +109,15 @@ app.controller("main", function ($scope, $http, socket) {
 			//update in post request to get time
 	//also in case where server said no
 	//number returned / 1000
+		$scope.serverTime = data.time;
 		if(data.time>0){
+	
 			$scope.startGame();
 		}
 	})
 
 	socket.on("timeleft", function (data) {
+		$scope.serverTime = data.time;
 		if(data.time>0){
 			$scope.startGame()
 		}

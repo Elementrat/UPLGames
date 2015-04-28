@@ -11,8 +11,9 @@ var express = require("express"),
 	app.use(express.static(__dirname + "/public"));
 	http.listen(4200);
 
+	var PASSWORD = "hunter2"
 
-	var users = { Mainframe : true};
+	var users = { Mainframe : "Admin"};
 	io.sockets.on('connection', function(socket) {
 
 		socket.on("set_user", function(data) {
@@ -29,7 +30,17 @@ var express = require("express"),
 
 		socket.on("message", function (data) {
 			if(socket.username === undefined) return;
-			io.sockets.emit("message", {username : socket.username, message : data});
+			io.sockets.emit("message", {username : socket.username, message : data, isAdmin : socket.isAdmin });
+		})
+
+		socket.on('set_admin', function (data) {
+			if(data.password === PASSWORD){
+				socket.isAdmin = true;
+				if(socket.username !== undefined && users[socket.username] !== undefined){
+					users[socket.username] = "Admin"
+					io.sockets.emit("updatelist", users);
+				}
+			}
 		})
 
 		socket.on("disconnect", function (e) {

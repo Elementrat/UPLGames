@@ -14,7 +14,7 @@
 <div class="chatapp" ng-app="chat" ng-controller="main">
 <div id = "namepanel"> <h2> Users </h2>
 <div id = "userlist"> 
-<div ng-repeat = "(user,name) in users" ng-class = "{'mainframecontent':user=='Mainframe'}">
+<div ng-repeat = "(user,type) in users" ng-class = "{'mainframecontent':type=='Admin'}">
 {{user}}
 
 
@@ -29,8 +29,8 @@
 
 <div id = "chatpanel">
 	<div class="messages">
-		<div ng-repeat="message in messages track by $index" ng-class = "{'mainframecontent':message.username=='Mainframe'}">
-			<span>{{message.username}}: </span><span ng-class="{'bluetext' : message.bluetext}">{{message.message}}</span>
+		<div ng-repeat="message in messages track by $index" ng-class = "{'mainframecontent':message.username=='Mainframe' || message.isAdmin}">
+			<span>{{message.username}}: </span><span ng-class="{'bluetext' : message.bluetext, 'orangetext' : message.orangetext}">{{message.message}}</span>
 		</div>
 	</div>
 	

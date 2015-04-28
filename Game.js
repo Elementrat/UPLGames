@@ -1,5 +1,7 @@
 var fs = require("fs");
 var PASSWORD = "hunter2"
+var PHRASE = "ALL YOUR PASS PHRASES ARE BELONG TO US"
+
 /*
 
 
@@ -69,6 +71,23 @@ module.exports = function (app, io) {
 		
 	})
 
+	app.post("api/get_team", function (req, res) {
+		var body = req.body,
+			phrase = body.phrase;
+
+			var valid = false;
+			for(var teamName in self.teams){
+				if(self.teams[teamName].phrase === phrase){
+					res.send({valid : true, team : teamName});
+					valid = true;
+					break;
+				}
+			}
+			if(!valid){
+				res.send({valid : false});
+			}
+	});
+
 	app.post("/admin/start", function (req, res) {
 		var body = req.body,
 			password = body.password;
@@ -124,12 +143,15 @@ module.exports = function (app, io) {
 	app.post("/admin/add_team", function (req, res) {
 		var body = req.body,
 			team = body.team,
+			phrase = body.phrase,
 			password = body.password;
 		if(password === PASSWORD){
-			self.addTeam(team);
+			self.addTeam(team, phrase);
 		}
 		res.send("1337Haxer");
 	})
+
+	
 }
 
 //Error, Incorrect, Correct
@@ -167,7 +189,7 @@ module.exports.prototype.isTeamAvaiable = function (name) {
 	return this.teams[name] === undefined;
 }
 
-module.exports.prototype.addTeam = function (name) {
+module.exports.prototype.addTeam = function (name, phrase) {
 	var answers = new Array(this.questions.length);
 	for(var i = 0; i < answers.length;i++){
 		answers[i] = 0;
@@ -176,7 +198,8 @@ module.exports.prototype.addTeam = function (name) {
 		this.teams[name] = {
 			name : name,
 			score : 0,
-			answers : answers
+			answers : answers,
+			phrase : phrase
 		}
 		this.save();
 		return true;

@@ -58,6 +58,11 @@ app.controller("main", function ($scope, $http, socket) {
 	}
 
 	socket.on("save", function (data) {
+		for(var teamName in $scope.teams){
+			if(data[teamName]===undefined){
+				delete $scope.teams[teamName];
+			}
+		}
 		for(var teamName in data) {
 			if($scope.teams[teamName] === undefined) {
 				$scope.teams[teamName] = data[teamName]

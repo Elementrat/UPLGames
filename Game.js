@@ -84,7 +84,7 @@ module.exports = function (app, io) {
 					category: q.category,
 				}
 			})
-			io.sockets.emit("timeleft", self.timeToRun - (Date.now() - self.startTime))
+			io.sockets.emit("timeleft", {time : self.timeToRun - (Date.now() - self.startTime)})
 			io.sockets.emit("questions", out)
 			console.log("GAME HAS STARTED!!!!!");
 			self.save();
@@ -136,12 +136,13 @@ module.exports = function (app, io) {
 module.exports.prototype.answer = function (team, questionId, token) {
 	if(this.teams[team] === undefined
 		|| this.questions[questionId] === undefined
+		|| token == null 
 		|| token === undefined) return "Error";
 
 
 	if(this.teams[team].answers[questionId]) return "Answered"
 
-	if(this.questions[questionId].token === token) {
+	if(this.questions[questionId].token === token.replace(" ","").toLowerCase()) {
 		this.teams[team].score+=this.questions[questionId].value;
 		this.teams[team].answers[questionId] = 1;
 		this.save();

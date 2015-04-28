@@ -70,12 +70,14 @@ app.controller("main", function ($scope, $http, socket) {
 		$scope.gameActive = true;
 		$("#countdown").countdown({until: $scope.serverTime/1000})
 	}
+
 	$scope.setCurrentTeam = function(team){
 		$scope.currentTeam = team;
 		document.getElementById("nav").style.pointerEvents = "all"
 		document.getElementById("login").style.display = "none"
 		//$scope.setCurrentQuestion($scope.questions[0]);
 		$scope.currentQuestion.title = "Welcome, " + $scope.currentTeam.name +"!";
+		$scope.currentQuestion.title += ""
 	}
 
 	socket.on("save", function (data) {
@@ -117,6 +119,7 @@ app.controller("main", function ($scope, $http, socket) {
 	})
 
 	socket.on("timeleft", function (data) {
+		console.log('time remainin' + data.time)
 		$scope.serverTime = data.time;
 		if(data.time>0){
 			$scope.startGame()

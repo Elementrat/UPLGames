@@ -107,9 +107,9 @@
 {
 	"title" : "Forgotten",
 	"category" : "Console Warriors",
-	"url" : "url/to/thingy",
-	"token"  : "carts",
-	"body" : "well hello",
+	"url" : false,
+	"token"  : "remake",
+	"body" : "I was pretty good at making hands sweaty.  _ _ _ _ _ _ 6 <br> I could stick to walls, but not around in the industry. _ _ _ 2 <br> If only I’d had a catchphrase like that Frosted Flakes guy... _ _ &nbsp; _ _ _ &nbsp; _ _ _ _ _ _ _ _ _ &nbsp; _ _ _ _ _  9 <br> Maybe I just blended in a little too well on store shelves. _ _ _ _  2 <br> Why’d cliff abandon me...  _ _ _ _ &nbsp; _ _ _ _ _ _ _ _ _ _  8 <br> EEEEEEEEEEEEEEEEEEEEEEEEE _ _ _ _ &nbsp; _ _ _ &nbsp; _ _ _ _ _ _ _ 1",
 	"value" : 1
 },
 {
@@ -148,9 +148,9 @@
 {
 	"title" : "Slick Logo",
 	"category" : "Hiring Rockstars",
-	"url" : "url/to/thingy",
+	"url" : false,
 	"token"  : "shipit",
-	"body" : "",
+	"body" : "Branded in 4096 pixels",
 	"value" : 1
 },
 

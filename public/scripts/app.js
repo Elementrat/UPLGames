@@ -32,6 +32,7 @@ app.controller("main", function ($scope, $http, socket) {
 		name : 'signedout',
 		score: 0,
 	}
+	$scope.gameActive = false;
 	$.countdown.setDefaults({description: ' until detonation', compact: true});
 
 	$scope.submitAnswer = function(text){
@@ -63,12 +64,17 @@ app.controller("main", function ($scope, $http, socket) {
 		document.getElementById("bodytext").innerHTML = $scope.currentQuestion.body;
 	}
 
+
+	$scope.startGame= function(){
+		$scope.gameActive = true;
+		$("#countdown").countdown({until: data.time/1000})
+	}
 	$scope.setCurrentTeam = function(team){
 		$scope.currentTeam = team;
 		document.getElementById("nav").style.pointerEvents = "all"
 		document.getElementById("login").style.display = "none"
 		//$scope.setCurrentQuestion($scope.questions[0]);
-		$scope.currentQuestion.title = "Welcome, " + $scope.currentTeam.name +"!" +" Get Puzzling!"
+		$scope.currentQuestion.title = "Welcome, " + $scope.currentTeam.name +"!";
 	}
 
 	socket.on("save", function (data) {
@@ -102,15 +108,14 @@ app.controller("main", function ($scope, $http, socket) {
 			//update in post request to get time
 	//also in case where server said no
 	//number returned / 1000
-	if(data.time>0){
-
-		$("#countdown").countdown({until: data.time/1000})
-	}
+		if(data.time>0){
+			$scope.startGame();
+		}
 	})
 
 	socket.on("timeleft", function (data) {
 		if(data.time>0){
-			$("#countdown").countdown({until: data.time/1000})
+			$scope.startGame()
 		}
 	})
 

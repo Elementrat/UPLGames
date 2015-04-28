@@ -142,3 +142,7 @@ a:hover{
 	top:700px;
 }
 
+
+.locked{
+	opacity:.4;
+}

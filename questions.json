@@ -32,18 +32,10 @@
 	"value" : 1
 },
 {
-	"title" : "JAWS",
-	"category" : "Coded Messages",
-	"url" : false,
-	"token"  : "steveirwin",
-	"body" : "They're attracted to blood...",
-	"value" : 1
-},
-{
 	"title" : "The Human Computer",
 	"category" : "Coded Messages",
 	"url" : false,
-	"token"  : "52",
+	"token"  : "052",
 	"body" : "119 104 097 116 032 105 115 032 116 119 111 032 112 108 117 115 032 116 119 111 013 010",
 	"value" : 1
 },
@@ -76,7 +68,7 @@
 	"title" : "M*A*S*H*U*P",
 	"category" : "Console Warriors",
 	"url" : false,
-	"token"  : "crossover",
+	"token"  : "crossed",
 	"body" : "A young hero from the forest blasts mutants through the past and future. 5-2 <br> Everyone’s favorite Erinaceinae rolls around at the speed of 18 parsecs. 4-8 <br> A foul-mouthed squirrel is called on to save the world from an appendage on the rampage. 5-1 <br> A psychopathic clown and his gang of gearheads infiltrate top secret military facilities. 4-1 <br> A gang of “love-to-hate em” survivors are sent to investigate when a mining ship sends out a distress signal. 4-1 <br> An emo demon gains new powers and strength from alien digs. 1-2 <br> One angry ancient deity can’t decide whether to help orcs, or their mortal enemies, humans. 1-3",
 	"value" : 1
 },
@@ -118,15 +110,6 @@
 	"url" : "url/to/thingy",
 	"token"  : "carts",
 	"body" : "well hello",
-	"value" : 1
-},
-
-{
-	"title" : "Stacks on Stacks",
-	"category" : "Hiring Rockstars",
-	"url" : "url/to/thingy",
-	"token"  : "eatstreet",
-	"body" : "Sample Text",
 	"value" : 1
 },
 {

@@ -60,13 +60,35 @@ var parseQuestions = function(questions) {
 app.controller("main", function ($scope, $http, socket) {
 	$scope.currentQuestion = { body: ''}
 	$scope.resultCode = '';
+	$scope.metaSolved = false;
 	$scope.currentTeam = {
 		name : 'signedout',
 		score: 0,
+		metaComplete : false,
 	}
 	$scope.gameActive = false;
 	$scope.serverTime = 0;
-	$.countdown.setDefaults({description: ' to Launch', compact: true});
+
+	$scope.explode = function(){
+		$http.get("/api/metasolved/").success(function(value){
+			if(!value){
+				for(var x= 0; x < 2; x++){
+					var splode = document.createElement("img")
+					var xpos = -200 + Math.random() * (window.innerWidth+100);
+					var ypos = -200 + Math.random() * (window.innerHeight+100);
+					splode.src = "img/explosion.gif"
+					splode.style.left = xpos;
+					splode.style.top = ypos;
+					splode.style.position = "absolute"
+					$(splode).addClass('explosion').appendTo($("body")) //main div
+					$(splode).attr("src", "img/explosion.gif");
+					 window.setTimeout( $scope.explode, Math.round(1 + Math.random() * 2)*1000 ); // 5 seconds
+			}}
+		})
+	}
+
+
+	$.countdown.setDefaults({description: ' to Launch', compact: true, onExpiry: $scope.explode});
 
 	$scope.attemptcomplete = function(key){
 		$http.post("/api/attemptmeta" , {team: $scope.currentTeam.name, phrase: $scope.currentTeam.phrase, key: key}).success(function(data){
@@ -185,6 +207,10 @@ app.controller("main", function ($scope, $http, socket) {
 
 	socket.on("questions", function (value) {
 		$scope.categories = parseQuestions(value)
+	})
+
+	socket.on("metasolved", function (value) {
+		$scope.metaSolved = true;
 	})
 
 })

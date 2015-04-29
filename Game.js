@@ -8,7 +8,8 @@ module.exports = function (app, io) {
 	this.app = app;
 	this.io = io;
 	this.startTime = null;
-	this.timeToRun = 9000000;
+	this.timeToRun = 9000000; //9000000;
+	this.metaSolved = false;
 
 	//determine if the cache file
 	this.questions = JSON.parse(fs.readFileSync( "./questions.json", 'utf8'));
@@ -40,6 +41,11 @@ module.exports = function (app, io) {
 
 	app.get("/api/state", function(req, res) {
 		res.send(self.getSafeTeams());
+	})
+
+
+	app.get("/api/metasolved", function(req, res) {
+		res.send(self.metaSolved);
 	})
 
 	app.get("/api/questions", function(req, res) {

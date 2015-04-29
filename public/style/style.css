@@ -57,6 +57,11 @@ input{
 	width:270px;
 }
 
+.explosion{
+	width:200px;
+	height:200px;
+}
+
 #inputbox{
 	margin:0px auto;
 	width:450px;

@@ -22,6 +22,7 @@ app.controller("main", function ($scope, $http) {
 	})
 
 	socket.on("save", function (data) {
+		console.log(data)
 		$scope.teams = data;
 		$scope.$apply();
 

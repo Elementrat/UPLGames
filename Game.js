@@ -131,9 +131,12 @@ module.exports = function (app, io) {
 			return;
 		}
 
+		console.log(body.key)
 		if(body.key === ENDGAME){
+			
 			out.status = true;
 			self.teams[team].metaComplete = true;
+			self.save();
 		}
 		else{
 			out.status = false;
@@ -247,7 +250,8 @@ module.exports.prototype.getSafeTeams = function () {
 		out[teamName] = {
 			name : team.name,
 			score : team.score,
-			answers : team.answers
+			answers : team.answers,
+			metaComplete: team.metaComplete
 		}
 	}
 	return out;

@@ -22,6 +22,10 @@ body{
 	height:100%;
 }
 
+#metacomplete{
+	color:yellow;
+}
+
 .team {
 	display: inline-block;
 	width: 140px;

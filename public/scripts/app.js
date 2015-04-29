@@ -12,6 +12,38 @@ document.addEventListener('click', function(event) {
   }
 }, false);
 
+// Production steps of ECMA-262, Edition 5, 15.4.4.21
+// Reference: http://es5.github.io/#x15.4.4.21
+if (!Array.prototype.reduce) {
+  Array.prototype.reduce = function(callback /*, initialValue*/) {
+    'use strict';
+    if (this == null) {
+      throw new TypeError('Array.prototype.reduce called on null or undefined');
+    }
+    if (typeof callback !== 'function') {
+      throw new TypeError(callback + ' is not a function');
+    }
+    var t = Object(this), len = t.length >>> 0, k = 0, value;
+    if (arguments.length == 2) {
+      value = arguments[1];
+    } else {
+      while (k < len && !(k in t)) {
+        k++; 
+      }
+      if (k >= len) {
+        throw new TypeError('Reduce of empty array with no initial value');
+      }
+      value = t[k++];
+    }
+    for (; k < len; k++) {
+      if (k in t) {
+        value = callback(value, t[k], k, t);
+      }
+    }
+    return value;
+  };
+}
+
 var app = angular.module("app", ["socket", "ngenter"]);
 
 
@@ -34,7 +66,24 @@ app.controller("main", function ($scope, $http, socket) {
 	}
 	$scope.gameActive = false;
 	$scope.serverTime = 0;
-	$.countdown.setDefaults({description: ' until detonation', compact: true});
+	$.countdown.setDefaults({description: ' to Launch', compact: true});
+
+	$scope.attemptcomplete = function(key){
+		$http.post("/api/attemptmeta" , {team: $scope.currentTeam.name, phrase: $scope.currentTeam.phrase, key: key}).success(function(data){
+			if(data.status){
+				console.log('you won')
+			}
+			else{
+				$http.post("/api/meta" , {team: $scope.currentTeam.name, phrase: $scope.currentTeam.phrase}).success(function(data){
+					var remainingkey = data.reduce(function(a,b){
+						return a+b;
+					}, "")
+
+					$("#deactivatetext").val(remainingkey)
+				})
+			}
+		})
+	}
 
 	$scope.submitAnswer = function(text){
 		$http.post("/api/answer/", {
@@ -81,7 +130,7 @@ app.controller("main", function ($scope, $http, socket) {
 				document.getElementById("login").style.display = "none"
 				//$scope.setCurrentQuestion($scope.questions[0]);
 				$scope.currentQuestion.title = "Welcome, " + $scope.currentTeam.name +"!";
-				$("#bodytext").html("Tips for Puzzling Success <br> 1. Remember the category. <br> 2. Consider the title. It *could* be a hint. <br> 3. Think about how information could be encoded. <br> Good luck. You are our only hopes.");
+				$("#bodytext").html("Tips for Puzzling Success <br> 1. Remember the category. <br> 2. Consider the title. It *could* be a hint. <br> 3. Think about how information could be encoded. <br> <br>Good luck. You are our only hopes.");
 			}else{
 				//@ALEX PLZ SIGNAL FAULURE	
 			}

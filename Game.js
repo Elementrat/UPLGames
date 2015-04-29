@@ -2,10 +2,8 @@ var fs = require("fs");
 var PASSWORD = "hunter2"
 var ENDGAME = "ALL YOUR PASS PHRASES ARE BELONG TO US"
 
-/*
+/**/
 
-
-*/
 module.exports = function (app, io) {
 	this.app = app;
 	this.io = io;
@@ -112,6 +110,33 @@ module.exports = function (app, io) {
 			}else{
 				out[i] = "?"
 			}
+		}
+
+		res.send(out);
+	})
+
+
+	app.post("/api/attemptmeta", function (req, res) {
+		var body = req.body,
+			team = body.team,
+			phrase = body.phrase;
+
+		var out = {}
+
+		if(phrase === undefined
+			|| team === undefined
+			|| self.teams[team] === undefined
+			|| self.teams[team].phrase !== phrase){
+			res.send("gtfo")
+			return;
+		}
+
+		if(body.key === ENDGAME){
+			out.status = true;
+			self.teams[team].metaComplete = true;
+		}
+		else{
+			out.status = false;
 		}
 
 		res.send(out);
@@ -243,7 +268,8 @@ module.exports.prototype.addTeam = function (name, phrase) {
 			name : name,
 			score : 0,
 			answers : answers,
-			phrase : phrase
+			phrase : phrase,
+			metaComplete : false
 		}
 		this.save();
 		return true;

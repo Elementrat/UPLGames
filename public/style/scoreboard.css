@@ -1,42 +1,64 @@
 body{
 	background-color:#000000;
 	color:white;
+	overflow:hidden;
+	font-family: 'Press Start 2P', cursive;
+}
+
+*{
+	margin:0px;
 }
 
 .gridcontainer{
 	width:90%;
 	min-width:700px;
-	height:90%;
+	height:94%;
 	border: 1px solid #00FF00;
 	margin:0px auto;
 }
 
 #grid{
 	margin:0px auto;
-	height:200px;
+	height:100%;
 }
 
 .team {
 	display: inline-block;
-	width: 100px;
+	width: 140px;
 	text-align: center;
+	height:100%;
+	margin-left:15px;
+	position:relative;
+}
+
+.title{
+	width:100%;
+	height:30px;
+	text-align: center;
+	position:absolute;
+	top:15px;
 }
 
 .team .teamname {
-	width: 80px;
+	width: 140px;
 	position: absolute;
 	text-align: center;
 	bottom: 50px;
 }
 
+.namespot{
+	width:100%;
+	height:100px;
+	position:absolute;
+	bottom:-110px;
+}
+
 .bar {
-	position: absolute;
-	bottom:150px;
+	position:absolute;
+	left:30px;
 	width: 80px;
-	margin-bottom:50px;
 	bottom:0px;
 	background-color:green;
-	bottom: 30px;
 	 -webkit-transition:height 2s;
 	 transition:height 2s;
 }

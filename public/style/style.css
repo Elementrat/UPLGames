@@ -32,7 +32,7 @@ ul{
 	float:left;
 	padding:15px 15px;
 	background:#003200;
-	width:210px;
+	width:200px;
 	height:100%;
 	border: 1px solid;
 	pointer-events:none;
@@ -42,14 +42,16 @@ ul{
 input{
 	background-color:transparent;
 	border: 1px solid #01bc01;
-	width:300px;
 	margin:0px auto;
 	height:20px;
 	color:#01bc01;
 }
 
 #answerfield{
-
+	width:140px;
+}
+#deactivatetext{
+	width:270px;
 }
 
 #inputbox{
@@ -74,7 +76,7 @@ textarea:focus, input:focus{
 
 #topnav{
 	width:100%;
-	height:30px;
+	height:90px;
 	line-height: 30px;
 }
 #headline{
@@ -107,6 +109,7 @@ textarea:focus, input:focus{
 	height:600px;
 	border:1px solid #01bc01;
 	text-align: center;
+	padding:15px 15px;
 }
 
 #content #title{
@@ -120,7 +123,6 @@ textarea:focus, input:focus{
 }
 .category{
 	font-weight:bold;
-	font-size:larger;
 }
 
 a:hover{
@@ -130,7 +132,7 @@ a:hover{
 
 #countdown{
 	text-align: center;
-	color:#555;
+	color:#888;
 }
 
 #contentimage{

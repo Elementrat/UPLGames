@@ -15,7 +15,6 @@
 </head>
 <body ng-app="app" ng-controller="main">
 <!--Make sure no hackers see this. The answer to Go Go Gadget is "cybersecurity1"!-->
-
 <div id="nav">
 <div id = "awaiting" ng-hide="gameActive"> Mainframe Locked </div>
 <ul>
@@ -31,14 +30,16 @@
 	</ul>
 	</li>
 </ul>
-<div id = "navbottom"> ead</div>
+<div id = "navbottom"> </div>
 
 </div>
 <div id = "frameContainer">
 <div id = "topnav">
 <div id = "teamdata"> Team: {{currentTeam.name}} | Score: {{currentTeam.score}}</div>
 <div id ="headline"> 
-<h3>1'st Annual UPL Games </h3>
+<h3>1st Annual UPL Games </h3>
+<div id = "countdown"> </div>
+<input type = "text" id = "deactivatetext" placeholder = "enter deactivation code" ng-model="finalkey" ng-enter="attemptcomplete(finalkey)"> 
 
 </div>
 <div id = "leaderboard"> 
@@ -57,7 +58,8 @@
 		<li ng-repeat = "team in teams"> {{team.name}}</li>
 		<!--<li> <input type = "text" value = "new team"> </li>!-->
 	</ul>
-	<input id = "teamphraseinput" ng-model="teamphrase" ng-enter="setCurrentTeam(teamphrase)" placeholder="Enter your team's passphrase"> 
+	<br>
+	<input id = "teamphraseinput" ng-model="teamphrase" ng-enter="setCurrentTeam(teamphrase)" placeholder="Enter your team pass"> 
 </div>
 
 <div id = "contentimage" ng-show = "currentQuestion.url" ng-style="{'background-image' :'url('+currentQuestion.url+')'}">
@@ -67,15 +69,15 @@
 <div id = "bodytext">
 <!-- {{currentQuestion.body}} !-->
 </div>
-
-</div>
 <div id = "inputbox"> 
-Answer: <input id = "answerfield" type = "text"  ng-model = "answerfield" ng-enter="submitAnswer(answerfield)">
+Answer: <input id = "answerfield" size ="15" type = "text"  ng-model = "answerfield" ng-enter="submitAnswer(answerfield)" >
 <div id = "result"> {{resultCode}} </div>
+</div>
+
 
 
 </div>
-<div id = "countdown"> </div>
+
 <a id = "footer" href = "https://www.youtube.com/watch?v=1XUeiYieYK4" target="_blank"> tunnel snakes rule ( ͡° ͜ʖ ͡°) </a>
 </div>
 

@@ -1,5 +1,5 @@
 var fs = require("fs");
-var PASSWORD = "hunter2"
+var PASSWORD = "hunter69"
 var ENDGAME = "123abcPassword1Hunter2batmandanke"
 console.log(ENDGAME.length)
 

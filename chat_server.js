@@ -11,7 +11,7 @@ var express = require("express"),
 	app.use(express.static(__dirname + "/public"));
 	http.listen(4200);
 
-	var PASSWORD = "hunter2"
+	var PASSWORD = "hunter69"
 
 	var users = { Mainframe : "Admin"};
 	io.sockets.on('connection', function(socket) {

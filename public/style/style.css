@@ -27,6 +27,9 @@ ul{
 	height:100px;
 }
 
+#awaiting{
+	color:red;
+}
 
 #nav{
 	float:left;

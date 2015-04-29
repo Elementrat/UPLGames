@@ -15,7 +15,7 @@
 			<div class = "gridcontainer">
 				<div id = "grid">
 					<div ng-repeat="team in teams track by $index" class="team">
-						<div class="bar" ng-style="{'height' :  team.score / maxScore * maxHeight + minHeight}">
+						<div class="bar" ng-class="{'metacompletebar' : team.metaComplete, 'metaincompletebar' : !team.metaComplete}" ng-style="{'height' :  team.score / maxScore * maxHeight + minHeight}">
 							<div class="score">{{team.score}}</div>
 							
 						</div>

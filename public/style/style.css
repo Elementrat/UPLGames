@@ -22,6 +22,8 @@ ul{
 	padding:0px 0px 0px 0px;
 }
 
+
+
 #navbottom{
 	width:200px;
 	height:100px;
@@ -54,7 +56,10 @@ input{
 	width:140px;
 }
 #deactivatetext{
-	width:270px;
+	width:290px;
+}
+#metaresponse{
+	float:left;
 }
 
 .explosion{

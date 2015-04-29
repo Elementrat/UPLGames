@@ -48,6 +48,7 @@ var app = angular.module("app", ["socket", "ngenter"]);
 
 
 var parseQuestions = function(questions) {
+			console.log(questions.length)
 	var out = {};
 	questions.forEach(function(q, index) {
 		q.index = index;
@@ -93,6 +94,8 @@ app.controller("main", function ($scope, $http, socket) {
 	$scope.attemptcomplete = function(key){
 		$http.post("/api/attemptmeta" , {team: $scope.currentTeam.name, phrase: $scope.currentTeam.phrase, key: key}).success(function(data){
 			if(data.status){
+				$("#countdown").countdown('pause')
+				$("#countdown").css("color", "blue")
 				console.log('you won')
 			}
 			else{

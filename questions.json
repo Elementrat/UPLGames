@@ -242,7 +242,14 @@
 	"body" : " Cray is known for creating the first supercomputer. In 1975 they announced the Cray-1, which was leagues ahead computers at the time, and was comparable to personal computers of the early 2000s. The Cray-1 used _____ processors because it allowed them iterate through arrays much faster.",
 	"value" : 1
 },
-
+{
+	"title" : "It's a Joke",
+	"category" : "Trivial Solutions",
+	"url" : false,
+	"token"  : "rootbeer",
+	"body" : "What is a system administrator's favorite drink?",
+	"value" : 1
+},
 
 
 

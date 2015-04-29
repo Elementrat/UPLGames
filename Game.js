@@ -1,6 +1,8 @@
 var fs = require("fs");
 var PASSWORD = "hunter2"
-var ENDGAME = "ALL YOUR PASS PHRASES ARE BELONG TO US"
+var ENDGAME = "123abcPassword1Hunter2batmandanke"
+console.log(ENDGAME.length)
+
 
 /**/
 

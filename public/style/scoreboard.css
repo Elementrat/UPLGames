@@ -30,8 +30,16 @@ body{
 	text-align: center;
 }
 
-#metacomplete{
+.metacomplete{
 	color:yellow;
+}
+
+.metacompletebar{
+	background-color:yellow;
+}
+
+.metaincompletebar{
+	background-color:green;
 }
 
 .team {
@@ -42,6 +50,8 @@ body{
 	margin-left:15px;
 	position:relative;
 }
+
+
 
 .title{
 	width:100%;
@@ -70,7 +80,6 @@ body{
 	left:30px;
 	width: 80px;
 	bottom:0px;
-	background-color:green;
 	 -webkit-transition:height 2s;
 	 transition:height 2s;
 }

@@ -1,0 +1,35 @@
+*{
+	margin:0px;
+	font-family: 'Source Code Pro';
+}
+body{
+	background-color:black;
+	color:white;
+	overflow: hidden;
+}
+
+#container{
+	margin:0px auto;
+	width:700px;
+	text-align: center;
+	height:100%;
+	margin-top:50px;
+}
+#conferencelogo{
+	width:200px;
+	height:200px;
+	margin:0px auto;
+	background-image:url('/img/nuclearlogo.png');
+	background-size:cover;
+	margin-top:40px;
+	margin-bottom:40px;
+}
+
+/* The animation code */
+@--webkit-keyframes logospin {
+    0%   {background-color: red; left:0px; top:0px;}
+    25%  {background-color: yellow; left:200px; top:0px;}
+    50%  {background-color: blue; left:200px; top:200px;}
+    75%  {background-color: green; left:0px; top:200px;}
+    100% {background-color: red; left:0px; top:0px;}
+}

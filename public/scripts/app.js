@@ -46,7 +46,6 @@ if (!Array.prototype.reduce) {
 
 var app = angular.module("app", ["socket", "ngenter"]);
 
-
 var parseQuestions = function(questions) {
 			console.log(questions.length)
 	var out = {};
@@ -71,9 +70,7 @@ app.controller("main", function ($scope, $http, socket) {
 	$scope.serverTime = 0;
 
 	$scope.explode = function(){
-		$http.get("/api/metasolved/").success(function(value){
-			if(!value){
-				for(var x= 0; x < 2; x++){
+			for(var x= 0; x < 2; x++){
 					var splode = document.createElement("img")
 					var xpos = -200 + Math.random() * (window.innerWidth+100);
 					var ypos = -200 + Math.random() * (window.innerHeight+100);
@@ -84,10 +81,8 @@ app.controller("main", function ($scope, $http, socket) {
 					$(splode).addClass('explosion').appendTo($("body")) //main div
 					$(splode).attr("src", "img/explosion.gif");
 					 window.setTimeout( $scope.explode, Math.round(1 + Math.random() * 2)*1000 ); // 5 seconds
-			}}
-		})
+			}
 	}
-
 
 	$.countdown.setDefaults({description: ' to Launch', compact: true, onExpiry: $scope.explode});
 

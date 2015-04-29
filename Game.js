@@ -231,7 +231,7 @@ module.exports.prototype.answer = function (team, phrase, questionId, token) {
 
 	if(this.teams[team].answers[questionId]) return "Answered"
 
-	if(this.questions[questionId].token === token.replace(" ","").toLowerCase()) {
+	if(this.questions[questionId].token === token.replace(/ /g,'').toLowerCase()) {
 		this.teams[team].score+=this.questions[questionId].value;
 		this.teams[team].answers[questionId] = 1;
 		this.save();

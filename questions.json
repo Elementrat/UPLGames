@@ -257,7 +257,7 @@
 	"title" : "Inquisition",
 	"category" : "Applications",
 	"url" : false,
-	"token"  : "521694201",
+	"token"  : "694206420",
 	"body" : "<span class='applications1'>Follow these steps to acquire access to the User DB<ol> <li> SSH into a UPL machine (ssh enderman.upl.cs.wisc.edu)</li> <li> Copy the User DB to wherever you would like ('cp ~riccardo/Public/uplgames.db .' to copy it into your current directory)</li><li> Access the <a href='http://www.tutorialspoint.com/sqlite/'>SQLite</a> databse by typing: 'sqlite3 uplgames.db', and make queries in the interactive menu. </li></ol></span><br/>What is the SSN of the 2nd highest paid CEO? (Digits only please, no hyphens!)",
 	"value" : 1
 },

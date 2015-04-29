@@ -37,7 +37,7 @@
 <div id = "topnav">
 <div id = "teamdata"> Team: {{currentTeam.name}} | Score: {{currentTeam.score}}</div>
 <div id ="headline"> 
-<h3>1st Annual UPL Games </h3>
+<h3>Undergraduate Uranium Lab Mainframe </h3>
 <div id = "countdown"> </div>
 <input type = "text" id = "deactivatetext" placeholder = "enter deactivation code" ng-model="finalkey" ng-enter="attemptcomplete(finalkey)"> 
 
@@ -49,7 +49,7 @@
 
 <div id = "content">
 
-<div id ="title"> {{currentQuestion.title}}
+<div id ="title"> <b>{{currentQuestion.title}} </b>
 </div>
 
 <div id = "login">
@@ -70,7 +70,7 @@
 <!-- {{currentQuestion.body}} !-->
 </div>
 <div id = "inputbox"> 
-Answer: <input id = "answerfield" size ="15" type = "text"  ng-model = "answerfield" ng-enter="submitAnswer(answerfield)" >
+Answer: <input id = "answerfield" type = "text"  ng-model = "answerfield" ng-enter="submitAnswer(answerfield)" >
 <div id = "result"> {{resultCode}} </div>
 </div>
 

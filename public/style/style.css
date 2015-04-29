@@ -86,7 +86,7 @@ textarea:focus, input:focus{
 	text-align:center;
 	line-height:30px;
 	margin:0px auto;
-	width:30%;
+	width:40%;
 	height:30px;
 }
 
@@ -112,12 +112,12 @@ textarea:focus, input:focus{
 	height:600px;
 	border:1px solid #01bc01;
 	text-align: center;
-	padding:15px 15px;
+	padding:10px 10px;
 }
 
 #content #title{
 	text-align:center;
-	line-height:40px;
+	line-height:30px;
 }
 
 .categorybox{
@@ -175,5 +175,5 @@ a:hover{
 
 ::-webkit-scrollbar-thumb
 {
-  background: rgba(255, 255, 255,  0.5);
+  background: rgba(255, 255, 255,  0.3);
 }

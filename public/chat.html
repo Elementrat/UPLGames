@@ -1,44 +1,36 @@
 <html>
-<head>
-	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
-	<script src="/socket.io/socket.io.js"></script>
-	<script src="scripts/angular.min.js"></script>
-	<script src="scripts/modules/socket.js"></script>
-	<script src="scripts/modules/ngEnter.js"></script>
-	<script src="scripts/chat.js"></script>
-	<link href="style/chat.css" type="text/css" rel="stylesheet"/>
-	<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
-</head>
-<body>
-<div id = "rootcontainer">
-<div class="chatapp" ng-app="chat" ng-controller="main">
-<div id = "namepanel"> <h2> Users </h2>
-<div id = "userlist"> 
-<div ng-repeat = "(user,type) in users" ng-class = "{'mainframecontent':type=='Admin'}">
-{{user}}
-
-
-</div>
-
-
-</div>
-</div>
-
-
-
-
-<div id = "chatpanel">
-	<div class="messages">
-		<div ng-repeat="message in messages track by $index" ng-class = "{'mainframecontent':message.username=='Mainframe' || message.isAdmin}">
-			<span>{{message.username}}: </span><span ng-class="{'bluetext' : message.bluetext, 'orangetext' : message.orangetext}">{{message.message}}</span>
-		</div>
-	</div>
-	
-	</div>
-	<div id="inputarea">
-		<input id="input" ng-enter="send()"/>
-	</div>
-</div>
-</div>
-</body>
-</html>
+	<head>
+		<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="scripts/angular.min.js"></script>
+		<script src="scripts/modules/socket.js"></script>
+		<script src="scripts/modules/ngEnter.js"></script>
+		<script src="scripts/chat.js"></script>
+		<link href="style/chat.css" type="text/css" rel="stylesheet"/>
+		<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+		</head>
+		<body>
+			<div id = "rootcontainer">
+				<div class="chatapp" ng-app="chat" ng-controller="main">
+					<div id = "namepanel"> <h2> Users </h2>
+						<div id = "userlist">
+							<div ng-repeat = "(user,type) in users" ng-class = "{'mainframecontent':type=='Admin'}">
+								{{user}}
+							</div>
+						</div>
+					</div>
+					<div id = "chatpanel">
+						<div class="messages">
+							<div ng-repeat="message in messages track by $index" ng-class = "{'mainframecontent':message.username=='Mainframe' || message.isAdmin}">
+								<span>{{message.username}}: </span><span ng-class="{'bluetext' : message.bluetext, 'orangetext' : message.orangetext}">{{message.message}}</span>
+							</div>
+						</div>
+						
+					</div>
+					<div id="inputarea">
+						<input id="input" ng-enter="send()"/>
+					</div>
+				</div>
+			</div>
+		</body>
+	</html>

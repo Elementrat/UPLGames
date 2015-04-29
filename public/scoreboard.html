@@ -1,26 +1,24 @@
 <html>
-<head>
-	<script src="/socket.io/socket.io.js"></script>
-	<script src="scripts/angular.min.js"></script>
-	<script src="scripts/scoreboard.js"></script>
-	<script src="scripts/lib/jquery.js"></script>
-	<link href="style/scoreboard.css" rel="stylesheet" type="text/css" />
-	<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
-</head>
-<body ng-app="scoreboard" ng-controller="main">
-<div class = "title"> Scoreboard</div>
-<div class = "gridcontainer">
-
-
-<div id = "grid">
-	<div ng-repeat="team in teams track by $index" class="team">
-		<div class="bar" ng-style="{'height' :  team.score / maxScore * maxHeight + minHeight}">
-			<div class="score">{{team.score}}</div>
-			
-		</div>
-		<div class="namespot" ng-class="{'metacomplete' : team.metaComplete}">{{team.name}}</div>
-	</div>
-	</div>
-	</div>
-</body>
-</html>
+	<head>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="scripts/angular.min.js"></script>
+		<script src="scripts/scoreboard.js"></script>
+		<script src="scripts/lib/jquery.js"></script>
+		<link href="style/scoreboard.css" rel="stylesheet" type="text/css" />
+		<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+		</head>
+		<body ng-app="scoreboard" ng-controller="main">
+			<div class = "title"> Scoreboard</div>
+			<div class = "gridcontainer">
+				<div id = "grid">
+					<div ng-repeat="team in teams track by $index" class="team">
+						<div class="bar" ng-style="{'height' :  team.score / maxScore * maxHeight + minHeight}">
+							<div class="score">{{team.score}}</div>
+							
+						</div>
+						<div class="namespot" ng-class="{'metacomplete' : team.metaComplete}">{{team.name}}</div>
+					</div>
+				</div>
+			</div>
+		</body>
+	</html>

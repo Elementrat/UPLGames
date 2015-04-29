@@ -1,33 +1,28 @@
 <html>
-<head>
-	<title>G_G</title>
-	<script src="/socket.io/socket.io.js"></script>
-	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
-	<script src="scripts/angular.min.js"></script>
-	<script src="scripts/admin.js"></script>
-	<style>
-		.pointinput {
-			width:70px;
-		} 
-		ul {
-			list-style: none;
-		}
-	</style>
-</head>
-<body ng-app="admin" ng-controller="main">
-
-<div class="team-widget">
-	<div class="lespookypanel">
-		<input ng-model="spook" type="password" ng-change="updatePassword(spook)"/>
-		<button ng-click="start()">Start</button>
-	</div>
-	<input ng-model="teamName"/><input ng-model="phrase"/> <button ng-click="addTeam(teamName, phrase)">Add Team</button>
-	<h1>Teams</h1>
-	<ul>
-		<li ng-repeat="team in teams">
-			<div teamedit="team"></div>
-		</li>
-	</ul>
-</div>
-</body>
+	<head>
+		<title>G_G</title>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+		<script src="scripts/angular.min.js"></script>
+		<script src="scripts/admin.js"></script>
+		<link href="style/admin.css" rel="stylesheet" type="text/css" />
+		
+	</head>
+	<body ng-app="admin" ng-controller="main">
+	<div id = "container">
+		<div class="team-widget">
+			<div class="lespookypanel">
+				<input ng-model="spook" type="password" ng-change="updatePassword(spook)"/>
+				<button ng-click="start()">Start</button>
+			</div>
+			<input ng-model="teamName"/><input ng-model="phrase"/> <button ng-click="addTeam(teamName, phrase)">Add Team</button>
+			<h1>Teams</h1>
+			<ul>
+				<li ng-repeat="team in teams">
+					<div teamedit="team"></div>
+				</li>
+			</ul>
+		</div>
+		</div>
+	</body>
 </html>

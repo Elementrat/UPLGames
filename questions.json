@@ -96,9 +96,9 @@
 {
 	"title" : "Bring Your Cards",
 	"category" : "Console Warriors",
-	"url" : "url/to/thingy",
-	"token"  : "carts",
-	"body" : "well hello",
+	"url" : false,
+	"token"  : "carted",
+	"body" : "50 56 11 N 6 57 10 E Gate 1 Zone 6<br>32 46 33 N 96 47 48 W Gate 1 Zone 3<br>34 03 N 118 15 W Gate 1 Zone 6 <br>35 41 N 139 41 E Gate 1 Zone 1 <br> 47 36 35 N 122 19 59 W Gate 1 Zone 2 <br> 37 47 N 122 25 W Gate 2 Zone 1",
 	"value" : 1
 },
 {
@@ -180,11 +180,18 @@
 	"title" : "Athletes Foo",
 	"category" : "Forefathers",
 	"url" : false,
-	"token"  : "totals",
-	"body" : "He invented the most famous programming language, but was more proud of his backhand. (14) <br> She dunked so hard she discovered bugs in her teeth. (12) <br> The web was his hole-in-one. (15) <br> He and Ballmer dominated in the courts and on the court. (9) <br> Passed. Relied heavily on his team to get the job done. (10) <br> A wilde beest on the bball court, his stature was a huge advantage.(15)",
+	"token"  : "octantal",
+	"body" : "8 of the best. <br> She dunked so hard she discovered bugs in her teeth. (5-6) <br>This fighter ranked 1st in hand-to-hand, but never stopped searching for more. (5-4)<br> The web was his hole-in-one. (3-7-3) <br>So skilled with the cold blade of a rapier he was honored by the Academy (5-10) <br>Designed a simple, but profound driving test. (4-7) <br> Invented the most famous programming language, but was more proud of his backhand. (6-7) <br>He and Ballmer dominated in the courts and on the court. (4-5) <br>Passed. Relied heavily on his team to get the job done. (5-4) <br>",
 	"value" : 1
 },
-
+{
+	"title" : "Humanities",
+	"category" : "Forefathers",
+	"url" : "img/m_______m.jpg",
+	"token"  : "totals",
+	"body" : "",
+	"value" : 1
+},
 {
 	"title" : "Stallmanism",
 	"category" : "Trivial Pursuits",
@@ -213,12 +220,12 @@
 	"title" : "Oh #$%@!",
 	"category" : "Trivial Pursuits",
 	"url" : false,
-	"token"  : "rm -rf /",
+	"token"  : "rm-rf/",
 	"body" : "On a Unix or Unix-like machine, with root permissions this 6 character terminal command spells out your data’s death, Rest in RIP.",
 	"value" : 1
 },
 {
-	"title" : "HALP5",
+	"title" : "International Business Meme",
 	"category" : "Trivial Pursuits",
 	"url" : false,
 	"token"  : "defaced",
@@ -237,7 +244,7 @@
 	"title" : "Snoopin' Around",
 	"category" : "Applications",
 	"url" : false,
-	"token"  : "adventures in stochastic processes",
+	"token"  : "adventuresinstochasticprocesses",
 	"body" : "<span class='applications1'>You've snooped on Alan and Alice Turing's network for a few hours, trying to figure out what topic they're trying to learn... here's how you set up your tools:<ol> <li> SSH into a UPL machine (ssh enderman.upl.cs.wisc.edu)</li> <li> Download the PCAP dump of the network activity here: <a href = 'https://www.dropbox.com/s/qxcfz8ojrj0hg2q/trace1.pcap' target = '_blank'> </li><li> Access the dump using Wireshark or a similar tool. We've installed Wireshark on enderman.upl.cs.wisc.edu for you. </li></ol></span><br/>What <i>textbook</i> was Alice searching for?",
 	"value" : 1
 },
